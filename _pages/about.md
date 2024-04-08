@@ -27,6 +27,7 @@ My research interests are broadly in the application of machine learning for cre
 
 - Improved controllability for generative models
 - Automated game design / development
+- Language Models as Agents
 - Efficient adaptation of foundational models
 - Attribution and unlearning
 
