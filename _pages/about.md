@@ -21,7 +21,7 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-Hi, my name is Wayne. I am a first year Ph.D. Student in the [Computer Science Department](https://csd.cmu.edu/) at CMU advised by [Chris Donahue](https://chrisdonahue.com/). 
+Hi, my name is Wayne. I am a first year Ph.D. Student in the [Computer Science Department](https://csd.cmu.edu/) at CMU advised by [Chris Donahue](https://chrisdonahue.com/) and [Ameet Talwalkar](https://www.cs.cmu.edu/~atalwalk/). 
 
 My research interests are broadly in the application of machine learning for creativity. Topics I'm interested in include (but are not limited to):
 
