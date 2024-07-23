@@ -1,0 +1,52 @@
+---
+layout: page
+permalink: /code-arena/
+title: Code Arena
+description: VSIX Extensions
+nav: false
+nav_order: 100
+---
+
+# Code Arena
+
+This page is a WIP project. If you stumble across this page and are curious about our work, please email me.
+
+## Code Arena VSIX Extensions
+
+Below you'll find links to download our VSIX extensions:
+
+- [Arena v0.0.6](/assets/vsix/arena-0.0.6.vsix)
+
+## Installation Instructions
+
+1. Download the desired VSIX file by clicking on the link above.
+2. Open Visual Studio Code.
+3. Go to the Extensions view (Ctrl+Shift+X).
+4. Click on the "..." menu in the top-right corner of the Extensions view.
+5. Select "Install from VSIX..." and choose the downloaded file.
+6. Restart Visual Studio Code after installation.
+
+If you’ve installed Code Arena before, please delete the ~/.code-arena folder to prevent any issues with new updates.
+
+If installed successfully you will see Arena showing up on the bottom right corner of your window. 
+When a completion is being generated, the check mark changes to a spinning circle.
+
+## Accepting Suggestions
+Press “Tab” to accept suggestion 1 (top) and “Shift-Tab” to accept suggestion 2 (bottom).
+
+## FAQ
+Q: My tab isn’t working / Code Arena doesn’t work well with copilot!
+A: Yes, copilot doesn’t work with Code Arena as Code Arena takes over the tab key. Disable the extension and reload your vscode window.
+
+Q: Code Arena is lagging my VSCode.
+A: Please restart VSCode; it should fix itself in less than a minute after you restart the application. (Should be fixed in the latest version)
+
+Q: My Inline completions are not being generated?
+A: Note that it currently needs some time before completions start working (Reason unknown). If it doesn’t work at first, try a few more times and completions should start showing up.
+Also, try restarting VSCode or triggering the suggestions manually.
+
+Q: How do I trigger the inline suggestion manually?
+A: There is a command called “Trigger Inline Suggestion” you can run. This is oftentimes much faster than waiting for an inline suggestion.
+
+Q: My inline completions are still not being generated?
+A: You can run the “Developer: Toggle Developer Tools” Command to see debug logs. You should see logs like the following which indicate the completions are being generated.
