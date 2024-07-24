@@ -15,9 +15,13 @@ This page is a WIP project. If you stumble across this page and are curious abou
 
 Below you'll find links to download our VSIX extensions:
 
+- [Arena v0.0.8](/assets/vsix/arena-0.0.8.vsix)
 - [Arena v0.0.7](/assets/vsix/arena-0.0.7.vsix)
 
 ## Updates
+
+### 0.0.8
+- Added completion ids to the display. For debugging purposes only and should not be released fully
 
 ### 0.0.7
 - Switched to a more stable server. Anything before 0.0.7 is unstable.
