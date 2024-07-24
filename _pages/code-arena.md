@@ -16,9 +16,9 @@ This page is a WIP project. If you stumble across this page and are curious abou
 Below you'll find links to download our VSIX extensions:
 
 - [Arena v0.0.7](/assets/vsix/arena-0.0.7.vsix)
-- [Arena v0.0.6](/assets/vsix/arena-0.0.6.vsix)
 
 ## Updates
+
 ### 0.0.7
 - Switched to a more stable server. Anything before 0.0.7 is unstable.
 
