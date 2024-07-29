@@ -16,13 +16,18 @@ This page is a WIP project. If you stumble across this page and are curious abou
 Below you'll find links to download our VSIX extensions:
 
 ### Latest Version
-- [Arena v0.0.9](/assets/vsix/arena-0.0.9.vsix)
+- [Arena v0.0.10](/assets/vsix/arena-0.0.10.vsix)
 
 ### Older versions
+- [Arena v0.0.9](/assets/vsix/arena-0.0.9.vsix)
 - [Arena v0.0.8](/assets/vsix/arena-0.0.8.vsix)
 - [Arena v0.0.7](/assets/vsix/arena-0.0.7.vsix)
 
 ## Updates
+
+### 0.0.10
+- Added configuration to disable automatic tab autocompletions.
+- Fixed a bug that delayed the query when invoking manually.
 
 ### 0.0.9
 - Added configurations for query delay and max output lines.
