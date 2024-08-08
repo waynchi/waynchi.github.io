@@ -15,15 +15,14 @@ This page is a WIP project. If you stumble across this page and are curious abou
 
 Below you'll find links to download our VSIX extensions:
 
-### Latest Version
-- [Arena v0.0.10](/assets/vsix/arena-0.0.10.vsix)
-
-### Older versions
-- [Arena v0.0.9](/assets/vsix/arena-0.0.9.vsix)
-- [Arena v0.0.8](/assets/vsix/arena-0.0.8.vsix)
-- [Arena v0.0.7](/assets/vsix/arena-0.0.7.vsix)
+- [Arena v0.0.11](/assets/vsix/arena-0.0.11.vsix)
 
 ## Updates
+
+### 0.0.11
+- Added the ability to view the voted for model in the status bar (bottom bar).
+- Added model voting history (computer icon on the activity bar; this is usually the left bar).
+- Added a setting to toggle off.
 
 ### 0.0.10
 - Added configuration to disable automatic tab autocompletions.
@@ -71,3 +70,9 @@ A: There is a command called “Trigger Inline Suggestion” you can run. This i
 
 Q: My inline completions are still not being generated?
 A: You can run the “Developer: Toggle Developer Tools” Command to see debug logs. You should see logs like the following which indicate the completions are being generated.
+
+## Older versions
+- [Arena v0.0.10](/assets/vsix/arena-0.0.10.vsix)
+- [Arena v0.0.9](/assets/vsix/arena-0.0.9.vsix)
+- [Arena v0.0.8](/assets/vsix/arena-0.0.8.vsix)
+- [Arena v0.0.7](/assets/vsix/arena-0.0.7.vsix)
