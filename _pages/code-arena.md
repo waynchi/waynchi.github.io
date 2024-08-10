@@ -15,9 +15,12 @@ This page is a WIP project. If you stumble across this page and are curious abou
 
 Below you'll find links to download our VSIX extensions:
 
-- [Arena v0.0.11](/assets/vsix/arena-0.0.11.vsix)
+- [Arena v0.0.12](/assets/vsix/arena-0.0.12.vsix)
 
 ## Updates
+
+### 0.0.12
+- Model voting history persists across sessions
 
 ### 0.0.11
 - Added the ability to view the voted for model in the status bar (bottom bar).
@@ -72,6 +75,7 @@ Q: My inline completions are still not being generated?
 A: You can run the “Developer: Toggle Developer Tools” Command to see debug logs. You should see logs like the following which indicate the completions are being generated.
 
 ## Older versions
+- [Arena v0.0.11](/assets/vsix/arena-0.0.11.vsix)
 - [Arena v0.0.10](/assets/vsix/arena-0.0.10.vsix)
 - [Arena v0.0.9](/assets/vsix/arena-0.0.9.vsix)
 - [Arena v0.0.8](/assets/vsix/arena-0.0.8.vsix)
