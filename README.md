@@ -194,6 +194,8 @@ Why Jekyll? Read [Andrej Karpathy's blog post](https://karpathy.github.io/2014/0
 
 ### Installation
 
+Follow this website: https://george-gca.github.io/blog/2022/running-local-al-folio/
+
 For a hands-on walkthrough of al-folio installation, check out [this cool video tutorial](https://www.youtube.com/watch?v=g6AJ9qPPoyc) by one of the community members! 🎬 🍿
 
 The preferred way of using this template is by clicking in [Use this template](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template#creating-a-repository-from-a-template) above the file list.
