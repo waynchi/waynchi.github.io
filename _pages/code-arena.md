@@ -1,6 +1,6 @@
 ---
 layout: page
-permalink: /code-arena/
+permalink: /code-arena-old/
 title: Code Arena
 nav: false
 nav_order: 100
@@ -8,7 +8,7 @@ nav_order: 100
 
 This page is a WIP project. If you stumble across this page and are curious about our work, please email me.
 
-Code Arena is an open source code AI coding assistant that provides paired autocomplete suggestions. Code Arena is free to use.
+Code Arena is an open source code AI coding assistant that provides paired autocomplete suggestions. Code Arena is **free** to use.
 
 The goal of this project is to evaluate which language models provide the best coding assistance.
 
@@ -74,6 +74,10 @@ However, we log your code for the purposes of debugging. You can opt-out of this
 Please submit a bug report [here](https://docs.google.com/forms/d/1LiXtL2-VbOdTVybD9TUTlAhPzN9acGG7Y9NZ532C6pY/edit)
 
 ## Voting Visualizations
+
+WIP
+
+## Publication
 
 WIP
 
