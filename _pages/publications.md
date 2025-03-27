@@ -9,6 +9,13 @@ nav_order: 1
 <!-- _pages/publications.md -->
 <div class="publications">
 
+<div class="publications-header">
+  <a href="https://scholar.google.com/citations?user={{ site.scholar_userid }}" class="btn btn-sm z-depth-0" role="button" target="_blank">
+    <i class="ai ai-google-scholar"></i> Google Scholar
+  </a>
+</div>
+
 {% bibliography -f {{ site.scholar.bibliography }} %}
 
 </div>
+
