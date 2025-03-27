@@ -9,6 +9,14 @@ nav_order: 1
 <!-- _pages/publications.md -->
 <div class="publications">
 
+<div class="google-scholar-link" style="margin-bottom: 20px; text-align: center;">
+  <a href="https://scholar.google.com/citations?user=YXJ-_k0AAAAJ&hl=en" class="btn btn-primary" target="_blank" style="text-decoration: none; padding: 8px 16px; background-color: #4285F4; color: white; border-radius: 4px; display: inline-flex; align-items: center;">
+    <i class="ai ai-google-scholar" style="margin-right: 8px; font-size: 1.2em;"></i>
+    View Google Scholar Profile
+  </a>
+</div>
+
 {% bibliography -f {{ site.scholar.bibliography }} %}
 
 </div>
+
