@@ -9,6 +9,16 @@ nav_order: 1
 <!-- _pages/publications.md -->
 <div class="publications">
 
+{% if site.scholar_userid %}
+<div class="scholar-button" style="text-align: center; margin-bottom: 2rem;">
+  <a href="https://scholar.google.com/citations?user={{ site.scholar_userid }}" class="btn btn-primary" target="_blank">
+    <i class="ai ai-google-scholar"></i> View on Google Scholar
+  </a>
+</div>
+{% endif %}
+
 {% bibliography -f {{ site.scholar.bibliography }} %}
 
 </div>
+
+
