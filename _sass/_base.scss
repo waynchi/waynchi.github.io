@@ -324,7 +324,23 @@ blockquote {
   .contact-note {
     font-size: 0.8rem;
   }
+.social-icon {
+  font-size: 1.2rem;
+  padding: 0.3rem;
+  transition: all 0.2s ease-in-out;
+  
+  &:hover {
+    transform: scale(1.2);
+  }
 }
+
+.scholar-icon {
+  color: #4285F4; // Google blue color
+  &:hover {
+    color: #34A853; // Google green color
+  }
+}
+
 
 
 // Footer
@@ -1034,3 +1050,4 @@ nav[data-toggle="toc"] {
     padding-top: 0.5rem;
   }
 }
+
