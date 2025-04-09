@@ -30,5 +30,7 @@ My research interests are 1. in the application of machine learning for creativi
 - Language Models as Agents
 - LLM Evaluation (especially in real-world settings)
 
-I completed my undergraduate and master's at the University of Southern California. Before starting my Ph.D., I spent around 7 years in industry working as an Applied Scientist at AWS (2019-2023) and NASA's Jet Propulsion Laboratory (2016-2019). 
+I completed my undergraduate and master's at the University of Southern California. Before starting my Ph.D., I spent around 7 years in industry working as an Applied Scientist at AWS (2019-2023) and NASA's Jet Propulsion Laboratory (2016-2019). I am grateful to be funded by NDSEG.
 If you are interested in any of my research topics or considering a Ph.D. after industry feel free to reach out.
+
+
