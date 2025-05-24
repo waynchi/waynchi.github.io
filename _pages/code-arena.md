@@ -79,7 +79,7 @@ WIP
 
 ## Publication
 
-WIP
+Accepted to ICML 2025.
 
 ## FAQ
 Q: My tab isn’t working / Code Arena doesn’t work well with Copilot code completions!
