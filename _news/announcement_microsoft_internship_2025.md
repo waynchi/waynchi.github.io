@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Started my internship at Microsoft Research!
+Started my internship at Microsoft Research
