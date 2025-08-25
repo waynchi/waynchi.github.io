@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Started my Ph.D. at CMU!
+Started my Ph.D. at CMU
