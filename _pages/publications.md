@@ -16,6 +16,26 @@ nav_order: 1
   </a>
 </div>
 
+<div class="edit-bench-highlight" style="margin-bottom: 20px; text-align: center;">
+  <a href="https://waynechi.com/edit-bench/" class="btn btn-success" target="_blank" style="text-decoration: none; padding: 8px 16px; background-color: #28a745; color: white; border-radius: 4px; display: inline-flex; align-items: center;">
+    <i class="fas fa-code" style="margin-right: 8px; font-size: 1.2em;"></i>
+    EDIT-Bench: Accepted to ICLR 2026 (Oral, Top 1%)
+  </a>
+  <br>
+  <a href="https://arxiv.org/abs/2511.04486" target="_blank">Arxiv Link</a> |
+  <a href="https://waynechi.com/edit-bench/" target="_blank">Project Website</a>
+  <br>
+  <pre style="text-align: left; margin: 10px auto; max-width: 800px; background: #f8f9fa; border-radius: 4px; padding: 8px; font-size: 0.9em; overflow-x: auto;">@misc{chi2025editbenchevaluatingllmabilities,
+  title={EDIT-Bench: Evaluating LLM Abilities to Perform Real-World Instructed Code Edits},
+  author={Wayne Chi and Valerie Chen and Ryan Shar and Aditya Mittal and Jenny Liang and Wei-Lin Chiang and Anastasios Nikolas Angelopoulos and Ion Stoica and Graham Neubig and Ameet Talwalkar and Chris Donahue},
+  year={2025},
+  eprint={2511.04486},
+  archivePrefix={arXiv},
+  primaryClass={cs.SE},
+  url={https://arxiv.org/abs/2511.04486},
+}</pre>
+</div>
+
 {% bibliography -f {{ site.scholar.bibliography }} %}
 
 </div>
