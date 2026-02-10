@@ -18,5 +18,7 @@ nav_order: 1
 
 {% bibliography -f {{ site.scholar.bibliography }} %}
 
+*EDIT-Bench has been accepted as an Oral presentation (top 1%) at ICLR 2024. [Project Website](https://waynechi.com/edit-bench/)*
+
 </div>
 
