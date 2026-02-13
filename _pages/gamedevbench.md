@@ -138,7 +138,7 @@ nav_order: 100
   /* Teaser */
   .gdb-teaser img {
     width: 100%;
-    border-radius: 12px;
+    border-radius: 0;
     box-shadow: 0 4px 20px rgba(0,0,0,0.1);
   }
   .gdb-teaser .caption {
@@ -151,7 +151,7 @@ nav_order: 100
   /* Example image */
   .gdb-example-img {
     width: 100%;
-    border-radius: 12px;
+    border-radius: 0;
     border: 1px solid #e0e0e0;
     box-shadow: 0 2px 12px rgba(0,0,0,0.06);
   }
@@ -392,13 +392,16 @@ nav_order: 100
   </p>
 </div>
 
-<!-- Abstract -->
+<!-- TL;DR -->
 <div class="gdb-section">
-  <h2>Abstract</h2>
+  <h2>TL;DR</h2>
   <div class="gdb-abstract">
-    <p>
-      GameDevBench is the first benchmark for evaluating LM agents on game development tasks. GameDevBench features 132 tasks set in the Godot engine, collected from web and video tutorials across four skill categories: gameplay logic (collision detectors, character controllers), 3D graphics and animation (material tuning, skeletal animation), 2D graphics and animation (sprite animation, TileMap setup), and user interface (HUD layout, menu navigation). Tasks require agents to navigate large codebases and manipulate multimodal assets such as shaders, sprites, and animations&mdash;reflecting the full complexity of real-world game development.
-    </p>
+    <ul style="line-height: 1.8;">
+      <li>GameDevBench is the first benchmark for evaluating LM agents on game development tasks.</li>
+      <li>GameDevBench features 132 tasks set in the Godot engine, collected from web and video tutorials across four skill categories: gameplay logic (collision detectors, character controllers), 3D graphics and animation (material tuning, skeletal animation), 2D graphics and animation (sprite animation, TileMap setup), and user interface (HUD layout, menu navigation).</li>
+      <li>Tasks require agents to navigate large codebases and manipulate multimodal assets such as shaders, sprites, and animations.</li>
+      <li>GameDevBench shows that even simple multimodal feedback is critical to improving performance.</li>
+    </ul>
   </div>
 </div>
 
@@ -506,7 +509,7 @@ nav_order: 100
     </table>
   </div>
   <p style="font-size: 0.85em; color: var(--global-text-color-light); text-align: center; margin-top: 12px;">
-    * Best configuration per model + framework combination.
+    * Best multimodal support for each configuration.
   </p>
 </div>
 
