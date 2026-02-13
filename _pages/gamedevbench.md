@@ -400,7 +400,7 @@ nav_order: 100
       <li>GameDevBench is the first benchmark for evaluating LM agents on game development tasks.</li>
       <li>GameDevBench features 132 tasks set in the Godot engine, collected from web and video tutorials across four skill categories: gameplay logic (collision detectors, character controllers), 3D graphics and animation (material tuning, skeletal animation), 2D graphics and animation (sprite animation, TileMap setup), and user interface (HUD layout, menu navigation).</li>
       <li>Tasks require agents to navigate large codebases and manipulate multimodal assets such as shaders, sprites, and animations.</li>
-      <li>GameDevBench shows that even simple multimodal feedback is critical to improving performance.</li>
+      <li>GameDevBench shows that even simple multimodal feedback can drastically improve performance.</li>
     </ul>
   </div>
 </div>
