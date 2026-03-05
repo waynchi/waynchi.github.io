@@ -23,20 +23,19 @@ nav_order: 100
     padding: 30px 0 10px;
   }
   .gdb-hero h1 {
-    font-size: 2.6em;
+    font-size: 2.8em;
     font-weight: 800;
     margin-bottom: 10px;
     line-height: 1.2;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    letter-spacing: -0.5px;
+    color: var(--global-text-color);
   }
   .gdb-hero .subtitle {
-    font-size: 1.2em;
+    font-size: 1.1em;
     color: var(--global-text-color-light);
     margin-bottom: 24px;
     font-weight: 400;
+    letter-spacing: 0.2px;
   }
 
   /* Author List */
@@ -70,41 +69,40 @@ nav_order: 100
     margin-bottom: 40px;
     display: flex;
     justify-content: center;
-    gap: 14px;
+    gap: 10px;
     flex-wrap: wrap;
   }
   .gdb-btn {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    padding: 11px 26px;
-    border-radius: 50px;
-    font-size: 0.95em;
+    gap: 7px;
+    padding: 9px 22px;
+    border-radius: 3px;
+    font-size: 0.88em;
     font-weight: 600;
     text-decoration: none !important;
-    transition: all 0.25s ease;
-    border: 2px solid;
+    transition: opacity 0.15s ease;
+    border: 1px solid;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    font-family: 'SF Mono', 'Fira Code', 'Courier New', monospace;
   }
   .gdb-btn-primary {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white !important;
-    border-color: transparent;
-    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    background: var(--global-text-color);
+    color: var(--global-bg-color) !important;
+    border-color: var(--global-text-color);
   }
   .gdb-btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+    opacity: 0.75;
   }
   .gdb-btn-outline {
     background: transparent;
     color: var(--global-text-color) !important;
-    border-color: #d0d0d0;
+    border-color: #b0b0b0;
   }
   .gdb-btn-outline:hover {
-    border-color: #667eea;
-    color: #667eea !important;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    border-color: var(--global-text-color);
+    opacity: 0.75;
   }
 
   /* Section Styling */
@@ -112,16 +110,14 @@ nav_order: 100
     margin-bottom: 48px;
   }
   .gdb-section h2 {
-    font-size: 1.5em;
+    font-size: 0.78em;
     font-weight: 700;
     margin-bottom: 20px;
     padding-bottom: 10px;
-    border-bottom: 3px solid;
-    border-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%) 1;
-    display: inline-block;
-  }
-  .gdb-section h2::after {
-    content: '';
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--global-text-color);
+    border-bottom: 1px solid #d0d0d0;
     display: block;
   }
 
@@ -138,22 +134,20 @@ nav_order: 100
   /* Teaser */
   .gdb-teaser img {
     width: 100%;
-    border-radius: 0;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    border: 1px solid #e0e0e0;
   }
   .gdb-teaser .caption {
-    font-size: 0.85em;
+    font-size: 0.82em;
     color: var(--global-text-color-light);
     text-align: center;
-    margin-top: 10px;
+    margin-top: 8px;
+    letter-spacing: 0.1px;
   }
 
   /* Example image */
   .gdb-example-img {
     width: 100%;
-    border-radius: 0;
     border: 1px solid #e0e0e0;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
   }
 
   /* Leaderboard */
@@ -246,11 +240,11 @@ nav_order: 100
     position: relative;
   }
   .gdb-bibtex pre {
-    background: #f6f8fa;
-    border: 1px solid #e0e0e0;
-    border-radius: 12px;
+    background: #f4f4f4;
+    border: 1px solid #d8d8d8;
+    border-radius: 0;
     padding: 24px;
-    font-size: 0.85em;
+    font-size: 0.84em;
     overflow-x: auto;
     line-height: 1.6;
   }
@@ -258,28 +252,24 @@ nav_order: 100
     position: absolute;
     top: 12px;
     right: 12px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
+    background: var(--global-text-color);
+    color: var(--global-bg-color);
     border: none;
-    border-radius: 8px;
-    padding: 7px 16px;
-    font-size: 0.8em;
+    border-radius: 2px;
+    padding: 5px 13px;
+    font-size: 0.76em;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.25s;
-    box-shadow: 0 2px 8px rgba(102,126,234,0.3);
+    transition: opacity 0.15s;
+    font-family: 'SF Mono', 'Fira Code', 'Courier New', monospace;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
   }
   .gdb-bibtex .copy-btn:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(102,126,234,0.4);
+    opacity: 0.7;
   }
 
   /* Dark mode */
-  html[data-theme='dark'] .gdb-hero h1 {
-    background: linear-gradient(135deg, #8b9cf7 0%, #a678c8 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-  }
   html[data-theme='dark'] .gdb-leaderboard {
     border-color: #3a3a3a;
   }
@@ -299,22 +289,16 @@ nav_order: 100
   html[data-theme='dark'] .gdb-lb-table .row-top-1 {
     background: rgba(26,158,92,0.08);
   }
-  html[data-theme='dark'] .gdb-bibtex pre {
-    background: #1a1a2e;
-    border-color: #444;
-  }
-  html[data-theme='dark'] .gdb-btn-outline {
-    border-color: #555;
-  }
   html[data-theme='dark'] .gdb-section h2 {
-    border-image: linear-gradient(135deg, #8b9cf7 0%, #a678c8 100%) 1;
+    border-bottom-color: #3a3a3a;
   }
-  html[data-theme='dark'] .gdb-teaser img {
-    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  html[data-theme='dark'] .gdb-bibtex pre {
+    background: #1c1c1c;
+    border-color: #3a3a3a;
   }
+  html[data-theme='dark'] .gdb-teaser img,
   html[data-theme='dark'] .gdb-example-img {
-    border-color: #444;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+    border-color: #3a3a3a;
   }
 </style>
 
