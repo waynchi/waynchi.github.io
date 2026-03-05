@@ -94,6 +94,15 @@
               {%- endif -%}
               {%- endif -%}
               {% endfor -%}
+
+              <!-- Project Pages -->
+              <li class="nav-item">
+                <a class="nav-link" href="{{ '/edit-bench/' | relative_url }}">EDIT-Bench</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ '/gamedevbench/' | relative_url }}">GameDevBench</a>
+              </li>
+
               {%- if site.enable_darkmode %}
 
               <!-- Toogle theme mode -->
