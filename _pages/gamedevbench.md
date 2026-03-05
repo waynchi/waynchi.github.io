@@ -10,7 +10,7 @@ nav_order: 100
 <style>
   /* Override page layout for wider content */
   .post {
-    max-width: 900px;
+    max-width: 980px;
     margin: 0 auto;
   }
   .post-header {
@@ -158,113 +158,87 @@ nav_order: 100
 
   /* Leaderboard */
   .gdb-leaderboard {
-    border: 1px solid #e0e0e0;
-    border-radius: 16px;
+    border: 1px solid #d8d8d8;
     overflow: hidden;
-    box-shadow: 0 2px 16px rgba(0,0,0,0.06);
-  }
-  .gdb-leaderboard-header {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    padding: 16px 24px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .gdb-leaderboard-header i {
-    font-size: 1.2em;
-  }
-  .gdb-leaderboard-header span {
-    font-weight: 700;
-    font-size: 1.1em;
+    background: var(--global-bg-color, #fff);
   }
   .gdb-lb-table {
     width: 100%;
     border-collapse: collapse;
   }
   .gdb-lb-table th {
-    padding: 14px 20px;
+    padding: 9px 16px;
     text-align: left;
-    font-weight: 600;
-    font-size: 0.85em;
+    font-weight: 700;
+    font-size: 0.72em;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
-    color: var(--global-text-color-light);
-    border-bottom: 2px solid #eee;
-    background: #fafbfc;
+    letter-spacing: 0.8px;
+    color: #555;
+    border-bottom: 2px solid #d0d0d0;
+    border-right: 1px solid #e4e4e4;
+    background: #f2f2f2;
+    white-space: nowrap;
   }
   .gdb-lb-table th:first-child {
-    width: 60px;
+    width: 52px;
     text-align: center;
   }
   .gdb-lb-table th:last-child {
     text-align: right;
+    border-right: none;
   }
   .gdb-lb-table td {
-    padding: 14px 20px;
-    border-bottom: 1px solid #f0f0f0;
-    font-size: 0.95em;
+    padding: 10px 16px;
+    border-bottom: 1px solid #eeeeee;
+    border-right: 1px solid #eeeeee;
+    font-size: 0.91em;
+    font-variant-numeric: tabular-nums;
+  }
+  .gdb-lb-table td:last-child {
+    border-right: none;
   }
   .gdb-lb-table tr:last-child td {
     border-bottom: none;
   }
   .gdb-lb-table tr:hover {
-    background: #f8f9ff;
+    background: rgba(0,0,0,0.025);
   }
   .gdb-lb-table .rank {
     text-align: center;
     font-weight: 700;
-    font-size: 1.15em;
+    font-size: 0.95em;
+    color: #aaa;
+    font-family: 'SF Mono', 'Fira Code', 'Courier New', monospace;
+  }
+  .gdb-lb-table .rank-top {
+    color: #444;
   }
   .gdb-lb-table .model-name {
     font-weight: 600;
+    font-family: 'SF Mono', 'Fira Code', 'Courier New', monospace;
+    font-size: 0.88em;
+    color: var(--global-text-color);
+  }
+  .gdb-lb-table .model-name-top {
+    font-weight: 700;
   }
   .gdb-lb-table .framework {
-    font-size: 0.85em;
+    font-size: 0.87em;
     color: var(--global-text-color-light);
+    font-family: 'SF Mono', 'Fira Code', 'Courier New', monospace;
   }
   .gdb-lb-table .score-cell {
     text-align: right;
-    font-variant-numeric: tabular-nums;
-  }
-  .gdb-lb-table .score-bar {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    width: 100%;
-    justify-content: flex-end;
-  }
-  .gdb-lb-table .score-bar-bg {
-    width: 120px;
-    height: 8px;
-    background: #eee;
-    border-radius: 4px;
-    overflow: hidden;
-  }
-  .gdb-lb-table .score-bar-fill {
-    height: 100%;
-    border-radius: 4px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    transition: width 0.6s ease;
-  }
-  .gdb-lb-table .score-num {
     font-weight: 700;
-    min-width: 42px;
-    text-align: right;
+    font-family: 'SF Mono', 'Fira Code', 'Courier New', monospace;
+    font-size: 0.95em;
+    letter-spacing: 0.3px;
   }
-
-  /* Top 3 row highlights */
-  .gdb-lb-table .row-gold {
-    background: linear-gradient(90deg, rgba(255,215,0,0.08) 0%, transparent 100%);
-  }
-  .gdb-lb-table .row-gold .model-name {
-    color: #667eea;
-  }
-  .gdb-lb-table .row-silver {
-    background: linear-gradient(90deg, rgba(192,192,192,0.08) 0%, transparent 100%);
-  }
-  .gdb-lb-table .row-bronze {
-    background: linear-gradient(90deg, rgba(205,127,50,0.08) 0%, transparent 100%);
+  .gdb-lb-table .score-hi  { color: #1a9e5c; }
+  .gdb-lb-table .score-mid { color: #2a7ab8; }
+  .gdb-lb-table .score-lo  { color: #c0392b; }
+  .gdb-lb-table .row-top-1 {
+    background: rgba(26,158,92,0.05);
   }
 
   /* BibTeX */
@@ -307,29 +281,23 @@ nav_order: 100
     background-clip: text;
   }
   html[data-theme='dark'] .gdb-leaderboard {
-    border-color: #444;
+    border-color: #3a3a3a;
   }
   html[data-theme='dark'] .gdb-lb-table th {
-    background: #1e1e1e;
-    border-bottom-color: #333;
+    background: #1c1c1c;
+    color: #aaa;
+    border-bottom-color: #3a3a3a;
+    border-right-color: #2e2e2e;
   }
   html[data-theme='dark'] .gdb-lb-table td {
-    border-bottom-color: #2a2a2a;
+    border-bottom-color: #282828;
+    border-right-color: #282828;
   }
   html[data-theme='dark'] .gdb-lb-table tr:hover {
-    background: #1e1e2e;
+    background: rgba(255,255,255,0.04);
   }
-  html[data-theme='dark'] .gdb-lb-table .score-bar-bg {
-    background: #333;
-  }
-  html[data-theme='dark'] .gdb-lb-table .row-gold {
-    background: linear-gradient(90deg, rgba(255,215,0,0.05) 0%, transparent 100%);
-  }
-  html[data-theme='dark'] .gdb-lb-table .row-silver {
-    background: linear-gradient(90deg, rgba(192,192,192,0.05) 0%, transparent 100%);
-  }
-  html[data-theme='dark'] .gdb-lb-table .row-bronze {
-    background: linear-gradient(90deg, rgba(205,127,50,0.05) 0%, transparent 100%);
+  html[data-theme='dark'] .gdb-lb-table .row-top-1 {
+    background: rgba(26,158,92,0.08);
   }
   html[data-theme='dark'] .gdb-bibtex pre {
     background: #1a1a2e;
@@ -419,96 +387,119 @@ nav_order: 100
 <div class="gdb-section">
   <h2>Leaderboard</h2>
   <div class="gdb-leaderboard">
-    <div class="gdb-leaderboard-header">
-      <i class="fas fa-trophy"></i>
-      <span>GameDevBench Rankings</span>
-    </div>
     <table class="gdb-lb-table">
       <thead>
         <tr>
           <th>Rank</th>
           <th>Model</th>
+          <th>Org</th>
           <th>Framework</th>
           <th style="text-align: right;">Score</th>
         </tr>
       </thead>
       <tbody>
-        <tr class="row-gold">
-          <td class="rank">🥇</td>
-          <td class="model-name">Gemini 3 Pro</td>
-          <td class="framework">Gemini CLI</td>
-          <td class="score-cell"><div class="score-bar"><div class="score-bar-bg"><div class="score-bar-fill" style="width:100%"></div></div><span class="score-num">54.5</span></div></td>
-        </tr>
-        <tr class="row-silver">
-          <td class="rank">🥈</td>
-          <td class="model-name">Gemini 3 Flash</td>
-          <td class="framework">Gemini CLI</td>
-          <td class="score-cell"><div class="score-bar"><div class="score-bar-bg"><div class="score-bar-fill" style="width:96%"></div></div><span class="score-num">52.3</span></div></td>
-        </tr>
-        <tr class="row-bronze">
-          <td class="rank">🥉</td>
-          <td class="model-name">Claude Sonnet 4.5</td>
-          <td class="framework">OpenHands</td>
-          <td class="score-cell"><div class="score-bar"><div class="score-bar-bg"><div class="score-bar-fill" style="width:93.8%"></div></div><span class="score-num">51.1</span></div></td>
+        <tr class="row-top-1">
+          <td class="rank rank-top">1</td>
+          <td class="model-name model-name-top">gpt-5.3-codex-high</td>
+          <td class="framework">OpenAI</td>
+          <td class="framework">Codex</td>
+          <td class="score-cell score-hi">59.1</td>
         </tr>
         <tr>
-          <td class="rank">4</td>
-          <td class="model-name">Claude Opus 4.5</td>
+          <td class="rank rank-top">2</td>
+          <td class="model-name">gemini-3-pro-preview</td>
+          <td class="framework">Google</td>
+          <td class="framework">Gemini CLI</td>
+          <td class="score-cell score-hi">54.5</td>
+        </tr>
+        <tr>
+          <td class="rank rank-top">3</td>
+          <td class="model-name">gemini-3-flash-preview</td>
+          <td class="framework">Google</td>
+          <td class="framework">Gemini CLI</td>
+          <td class="score-cell score-hi">52.3</td>
+        </tr>
+        <tr>
+          <td class="rank rank-top">4</td>
+          <td class="model-name">claude-sonnet-4-5-20250929</td>
+          <td class="framework">Anthropic</td>
+          <td class="framework">OpenHands</td>
+          <td class="score-cell score-hi">51.1</td>
+        </tr>
+        <tr>
+          <td class="rank rank-top">5</td>
+          <td class="model-name">claude-opus-4-5-20251101</td>
+          <td class="framework">Anthropic</td>
           <td class="framework">Claude Code</td>
-          <td class="score-cell"><div class="score-bar"><div class="score-bar-bg"><div class="score-bar-fill" style="width:91.7%"></div></div><span class="score-num">50.0</span></div></td>
-        </tr>
-        <tr>
-          <td class="rank">5</td>
-          <td class="model-name">GPT-5.1 Codex Max</td>
-          <td class="framework">OpenHands</td>
-          <td class="score-cell"><div class="score-bar"><div class="score-bar-bg"><div class="score-bar-fill" style="width:91.0%"></div></div><span class="score-num">49.6</span></div></td>
+          <td class="score-cell score-hi">50.0</td>
         </tr>
         <tr>
           <td class="rank">6</td>
-          <td class="model-name">Claude Sonnet 4.5</td>
-          <td class="framework">Claude Code</td>
-          <td class="score-cell"><div class="score-bar"><div class="score-bar-bg"><div class="score-bar-fill" style="width:87.5%"></div></div><span class="score-num">47.7</span></div></td>
+          <td class="model-name">gpt-5.1-codex-max</td>
+          <td class="framework">OpenAI</td>
+          <td class="framework">OpenHands</td>
+          <td class="score-cell score-mid">49.6</td>
         </tr>
         <tr>
           <td class="rank">7</td>
-          <td class="model-name">GPT-5.1 Codex Max</td>
-          <td class="framework">Codex</td>
-          <td class="score-cell"><div class="score-bar"><div class="score-bar-bg"><div class="score-bar-fill" style="width:76.5%"></div></div><span class="score-num">41.7</span></div></td>
+          <td class="model-name">claude-opus-4-6</td>
+          <td class="framework">Anthropic</td>
+          <td class="framework">Claude Code</td>
+          <td class="score-cell score-mid">49.2</td>
         </tr>
         <tr>
           <td class="rank">8</td>
-          <td class="model-name">Gemini 3 Flash</td>
-          <td class="framework">OpenHands</td>
-          <td class="score-cell"><div class="score-bar"><div class="score-bar-bg"><div class="score-bar-fill" style="width:74.3%"></div></div><span class="score-num">40.5</span></div></td>
+          <td class="model-name">claude-sonnet-4-5-20250929</td>
+          <td class="framework">Anthropic</td>
+          <td class="framework">Claude Code</td>
+          <td class="score-cell score-mid">47.7</td>
         </tr>
         <tr>
           <td class="rank">9</td>
-          <td class="model-name">Kimi K2.5</td>
-          <td class="framework">OpenHands</td>
-          <td class="score-cell"><div class="score-bar"><div class="score-bar-bg"><div class="score-bar-fill" style="width:71.4%"></div></div><span class="score-num">38.9</span></div></td>
+          <td class="model-name">gpt-5.1-codex-max</td>
+          <td class="framework">OpenAI</td>
+          <td class="framework">Codex</td>
+          <td class="score-cell score-mid">41.7</td>
         </tr>
         <tr>
           <td class="rank">10</td>
-          <td class="model-name">Claude Haiku 4.5</td>
+          <td class="model-name">gemini-3-flash-preview</td>
+          <td class="framework">Google</td>
           <td class="framework">OpenHands</td>
-          <td class="score-cell"><div class="score-bar"><div class="score-bar-bg"><div class="score-bar-fill" style="width:57.4%"></div></div><span class="score-num">31.3</span></div></td>
+          <td class="score-cell score-mid">40.5</td>
         </tr>
         <tr>
           <td class="rank">11</td>
-          <td class="model-name">Claude Haiku 4.5</td>
-          <td class="framework">Claude Code</td>
-          <td class="score-cell"><div class="score-bar"><div class="score-bar-bg"><div class="score-bar-fill" style="width:47.3%"></div></div><span class="score-num">25.8</span></div></td>
+          <td class="model-name">kimi-k2.5</td>
+          <td class="framework">Moonshot AI</td>
+          <td class="framework">OpenHands</td>
+          <td class="score-cell score-mid">38.9</td>
         </tr>
         <tr>
           <td class="rank">12</td>
-          <td class="model-name">Qwen3-VL-235B</td>
+          <td class="model-name">claude-haiku-4-5-20251001</td>
+          <td class="framework">Anthropic</td>
           <td class="framework">OpenHands</td>
-          <td class="score-cell"><div class="score-bar"><div class="score-bar-bg"><div class="score-bar-fill" style="width:15.2%"></div></div><span class="score-num">8.3</span></div></td>
+          <td class="score-cell score-lo">31.3</td>
+        </tr>
+        <tr>
+          <td class="rank">13</td>
+          <td class="model-name">claude-haiku-4-5-20251001</td>
+          <td class="framework">Anthropic</td>
+          <td class="framework">Claude Code</td>
+          <td class="score-cell score-lo">25.8</td>
+        </tr>
+        <tr>
+          <td class="rank">14</td>
+          <td class="model-name">qwen3-vl-235b-a22b-instruct</td>
+          <td class="framework">Alibaba</td>
+          <td class="framework">OpenHands</td>
+          <td class="score-cell score-lo">8.3</td>
         </tr>
       </tbody>
     </table>
   </div>
-  <p style="font-size: 0.85em; color: var(--global-text-color-light); text-align: center; margin-top: 12px;">
+  <p style="font-size: 0.83em; color: var(--global-text-color-light); margin-top: 10px;">
     * Best multimodal support for each configuration.
   </p>
 </div>
