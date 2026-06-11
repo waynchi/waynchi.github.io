@@ -33,9 +33,53 @@ nav_order: 100
   .gdb-hero .subtitle {
     font-size: 1.1em;
     color: var(--global-text-color-light);
-    margin-bottom: 24px;
+    margin-bottom: 12px;
     font-weight: 400;
     letter-spacing: 0.2px;
+  }
+  .gdb-hero .venue {
+    font-size: 1.0em;
+    margin-bottom: 24px;
+    letter-spacing: 0.5px;
+  }
+
+  /* Stats strip */
+  .gdb-stats {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    flex-wrap: wrap;
+    border: 1px solid #d8d8d8;
+    margin-bottom: 48px;
+  }
+  .gdb-stat {
+    flex: 1 1 140px;
+    text-align: center;
+    padding: 18px 10px;
+    border-right: 1px solid #e4e4e4;
+  }
+  .gdb-stat:last-child {
+    border-right: none;
+  }
+  .gdb-stat .num {
+    font-size: 1.6em;
+    font-weight: 800;
+    font-family: 'SF Mono', 'Fira Code', 'Courier New', monospace;
+    color: var(--global-text-color);
+    line-height: 1.2;
+  }
+  .gdb-stat .label {
+    font-size: 0.72em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--global-text-color-light);
+    margin-top: 4px;
+  }
+  html[data-theme='dark'] .gdb-stats {
+    border-color: #3a3a3a;
+  }
+  html[data-theme='dark'] .gdb-stat {
+    border-right-color: #2e2e2e;
   }
 
   /* Author List */
@@ -306,6 +350,7 @@ nav_order: 100
 <div class="gdb-hero">
   <h1>GameDevBench</h1>
   <p class="subtitle">Evaluating Agentic Capabilities Through Game Development</p>
+  <p class="venue"><strong>ICML 2026</strong></p>
 </div>
 
 <!-- Authors -->
@@ -344,15 +389,40 @@ nav_order: 100
   </p>
 </div>
 
+<!-- Stats strip -->
+<div class="gdb-stats">
+  <div class="gdb-stat">
+    <div class="num">333</div>
+    <div class="label">Tasks</div>
+  </div>
+  <div class="gdb-stat">
+    <div class="num">88</div>
+    <div class="label">Tutorials</div>
+  </div>
+  <div class="gdb-stat">
+    <div class="num">4</div>
+    <div class="label">Skill Categories</div>
+  </div>
+  <div class="gdb-stat">
+    <div class="num">114</div>
+    <div class="label">Avg. LOC / Solution</div>
+  </div>
+  <div class="gdb-stat">
+    <div class="num">53.8%</div>
+    <div class="label">Best Agent Score</div>
+  </div>
+</div>
+
 <!-- TL;DR -->
 <div class="gdb-section">
   <h2>TL;DR</h2>
   <div class="gdb-abstract">
     <ul style="line-height: 1.8;">
       <li>GameDevBench is the first benchmark for evaluating LM agents on game development tasks.</li>
-      <li>GameDevBench features 132 tasks set in the Godot engine, collected from web and video tutorials across four skill categories: gameplay logic (collision detectors, character controllers), 3D graphics and animation (material tuning, skeletal animation), 2D graphics and animation (sprite animation, TileMap setup), and user interface (HUD layout, menu navigation).</li>
-      <li>Tasks require agents to navigate large codebases and manipulate multimodal assets such as shaders, sprites, and animations.</li>
-      <li>GameDevBench shows that even simple multimodal feedback can drastically improve performance.</li>
+      <li>GameDevBench features 333 tasks set in the Godot engine, collected from web and video tutorials across four skill categories: gameplay logic (collision detectors, character controllers), 3D graphics and animation (material tuning, skeletal animation), 2D graphics and animation (sprite animation, TileMap setup), and user interface (HUD layout, menu navigation).</li>
+      <li>Tasks require agents to navigate large codebases and manipulate multimodal assets such as shaders, sprites, and animations &mdash; the average solution requires over 3&times; the lines of code and file changes of prior software development benchmarks.</li>
+      <li>Game development is hard for agents: the best agent and method solves only 53.8% of tasks, and success drops sharply on multimodally demanding tasks (51.4% on gameplay vs. 33.0% on 2D graphics).</li>
+      <li>Two simple image and video-based feedback mechanisms consistently improve performance &mdash; visual feedback lifts GPT-5.4 from 41.1% to 52.0%.</li>
     </ul>
   </div>
 </div>
@@ -377,114 +447,105 @@ nav_order: 100
           <th>Rank</th>
           <th>Model</th>
           <th>Org</th>
-          <th>Framework</th>
+          <th>Harness</th>
+          <th>Feedback</th>
           <th style="text-align: right;">Score</th>
         </tr>
       </thead>
       <tbody>
         <tr class="row-top-1">
           <td class="rank rank-top">1</td>
-          <td class="model-name model-name-top">gpt-5.3-codex-high</td>
-          <td class="framework">OpenAI</td>
-          <td class="framework">Codex</td>
-          <td class="score-cell score-hi">59.1</td>
+          <td class="model-name model-name-top">gemini-3-pro-preview</td>
+          <td class="framework">Google</td>
+          <td class="framework">Gemini CLI</td>
+          <td class="framework">Screenshot + Video</td>
+          <td class="score-cell score-hi">53.8</td>
         </tr>
         <tr>
           <td class="rank rank-top">2</td>
-          <td class="model-name">gemini-3-pro-preview</td>
-          <td class="framework">Google</td>
-          <td class="framework">Gemini CLI</td>
-          <td class="score-cell score-hi">54.5</td>
+          <td class="model-name">gpt-5.4</td>
+          <td class="framework">OpenAI</td>
+          <td class="framework">Codex</td>
+          <td class="framework">Screenshot + Video</td>
+          <td class="score-cell score-hi">52.0</td>
         </tr>
         <tr>
           <td class="rank rank-top">3</td>
           <td class="model-name">gemini-3-flash-preview</td>
           <td class="framework">Google</td>
           <td class="framework">Gemini CLI</td>
-          <td class="score-cell score-hi">52.3</td>
+          <td class="framework">Video</td>
+          <td class="score-cell score-hi">46.9</td>
         </tr>
         <tr>
-          <td class="rank rank-top">4</td>
-          <td class="model-name">claude-sonnet-4-5-20250929</td>
-          <td class="framework">Anthropic</td>
+          <td class="rank">4</td>
+          <td class="model-name">gpt-5.4-mini</td>
+          <td class="framework">OpenAI</td>
+          <td class="framework">Codex</td>
+          <td class="framework">Video</td>
+          <td class="score-cell score-mid">43.2</td>
+        </tr>
+        <tr>
+          <td class="rank">5</td>
+          <td class="model-name">gpt-5.4-mini</td>
+          <td class="framework">OpenAI</td>
           <td class="framework">OpenHands</td>
-          <td class="score-cell score-hi">51.1</td>
-        </tr>
-        <tr>
-          <td class="rank rank-top">5</td>
-          <td class="model-name">claude-opus-4-5-20251101</td>
-          <td class="framework">Anthropic</td>
-          <td class="framework">Claude Code</td>
-          <td class="score-cell score-hi">50.0</td>
+          <td class="framework">Baseline</td>
+          <td class="score-cell score-mid">38.4</td>
         </tr>
         <tr>
           <td class="rank">6</td>
-          <td class="model-name">gpt-5.1-codex-max</td>
-          <td class="framework">OpenAI</td>
-          <td class="framework">OpenHands</td>
-          <td class="score-cell score-mid">49.6</td>
+          <td class="model-name">claude-sonnet-4-5</td>
+          <td class="framework">Anthropic</td>
+          <td class="framework">Claude Code</td>
+          <td class="framework">Screenshot + Video</td>
+          <td class="score-cell score-mid">34.8</td>
         </tr>
         <tr>
           <td class="rank">7</td>
-          <td class="model-name">claude-opus-4-6</td>
-          <td class="framework">Anthropic</td>
-          <td class="framework">Claude Code</td>
-          <td class="score-cell score-mid">49.2</td>
-        </tr>
-        <tr>
-          <td class="rank">8</td>
-          <td class="model-name">claude-sonnet-4-5-20250929</td>
-          <td class="framework">Anthropic</td>
-          <td class="framework">Claude Code</td>
-          <td class="score-cell score-mid">47.7</td>
-        </tr>
-        <tr>
-          <td class="rank">9</td>
-          <td class="model-name">gpt-5.1-codex-max</td>
-          <td class="framework">OpenAI</td>
-          <td class="framework">Codex</td>
-          <td class="score-cell score-mid">41.7</td>
-        </tr>
-        <tr>
-          <td class="rank">10</td>
           <td class="model-name">gemini-3-flash-preview</td>
           <td class="framework">Google</td>
           <td class="framework">OpenHands</td>
-          <td class="score-cell score-mid">40.5</td>
+          <td class="framework">Screenshot + Video</td>
+          <td class="score-cell score-mid">31.8</td>
         </tr>
         <tr>
-          <td class="rank">11</td>
+          <td class="rank">8</td>
           <td class="model-name">kimi-k2.5</td>
           <td class="framework">Moonshot AI</td>
           <td class="framework">OpenHands</td>
-          <td class="score-cell score-mid">38.9</td>
+          <td class="framework">Screenshot + Video</td>
+          <td class="score-cell score-lo">20.7</td>
         </tr>
         <tr>
-          <td class="rank">12</td>
-          <td class="model-name">claude-haiku-4-5-20251001</td>
-          <td class="framework">Anthropic</td>
-          <td class="framework">OpenHands</td>
-          <td class="score-cell score-lo">31.3</td>
-        </tr>
-        <tr>
-          <td class="rank">13</td>
-          <td class="model-name">claude-haiku-4-5-20251001</td>
+          <td class="rank">9</td>
+          <td class="model-name">claude-haiku-4-5</td>
           <td class="framework">Anthropic</td>
           <td class="framework">Claude Code</td>
-          <td class="score-cell score-lo">25.8</td>
+          <td class="framework">Video</td>
+          <td class="score-cell score-lo">18.6</td>
         </tr>
         <tr>
-          <td class="rank">14</td>
-          <td class="model-name">qwen3-vl-235b-a22b-instruct</td>
+          <td class="rank">10</td>
+          <td class="model-name">claude-haiku-4-5</td>
+          <td class="framework">Anthropic</td>
+          <td class="framework">OpenHands</td>
+          <td class="framework">Screenshot + Video</td>
+          <td class="score-cell score-lo">17.7</td>
+        </tr>
+        <tr>
+          <td class="rank">11</td>
+          <td class="model-name">qwen3.5-397b</td>
           <td class="framework">Alibaba</td>
           <td class="framework">OpenHands</td>
-          <td class="score-cell score-lo">8.3</td>
+          <td class="framework">Baseline</td>
+          <td class="score-cell score-lo">5.4</td>
         </tr>
       </tbody>
     </table>
   </div>
   <p style="font-size: 0.83em; color: var(--global-text-color-light); margin-top: 10px;">
-    * Best multimodal support for each configuration.
+    * <code>pass@1</code> (%) on all 333 tasks. Each row shows the best-performing multimodal feedback configuration for that model + harness pair (ICML 2026 camera-ready results). Screenshot = editor screenshot MCP server; Video = runtime gameplay video instructions.
   </p>
 </div>
 
