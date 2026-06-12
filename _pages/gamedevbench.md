@@ -334,7 +334,7 @@ nav_order: 100
   }
   .gdb-bar-row {
     display: grid;
-    grid-template-columns: 250px 1fr 118px;
+    grid-template-columns: 318px 1fr 118px;
     align-items: center;
     gap: 14px;
     padding: 9px 0;
@@ -345,7 +345,7 @@ nav_order: 100
   }
   .gdb-bar-label {
     font-family: 'SF Mono', 'Fira Code', 'Courier New', monospace;
-    font-size: 0.84em;
+    font-size: 0.8em;
     font-weight: 600;
     color: var(--global-text-color);
     display: flex;
@@ -411,7 +411,7 @@ nav_order: 100
   }
   .gdb-axis {
     display: grid;
-    grid-template-columns: 250px 1fr 118px;
+    grid-template-columns: 318px 1fr 118px;
     gap: 14px;
     padding-top: 8px;
   }
