@@ -354,10 +354,9 @@ nav_order: 100
     white-space: nowrap;
     overflow: hidden;
   }
-  .gdb-bar-label .dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 2px;
+  .gdb-bar-label .logo {
+    width: 16px;
+    height: 16px;
     flex-shrink: 0;
   }
   .gdb-bar-label .harness {
@@ -537,7 +536,7 @@ nav_order: 100
   <h2>Leaderboard</h2>
   <div class="gdb-chart">
     <div class="gdb-bar-row">
-      <div class="gdb-bar-label"><span class="dot" style="background:#4285f4;"></span>gemini-3-pro-preview&nbsp;<span class="harness">[Gemini CLI]</span></div>
+      <div class="gdb-bar-label"><img class="logo" src="/assets/img/logos/gemini.svg" alt="gemini">gemini-3-pro-preview&nbsp;<span class="harness">[Gemini CLI]</span></div>
       <div class="gdb-bar-track">
         <div class="gdb-bar-fill" style="width:53.8%;background:#4285f4;"></div>
         <div class="gdb-bar-err" style="left:48.4%;width:10.8%;"></div>
@@ -545,7 +544,7 @@ nav_order: 100
       <div class="gdb-bar-score">53.8% <span class="ci">±5.4</span></div>
     </div>
     <div class="gdb-bar-row">
-      <div class="gdb-bar-label"><span class="dot" style="background:#10a37f;"></span>gpt-5.4&nbsp;<span class="harness">[Codex]</span></div>
+      <div class="gdb-bar-label"><img class="logo" src="/assets/img/logos/openai.svg" alt="openai">gpt-5.4&nbsp;<span class="harness">[Codex]</span></div>
       <div class="gdb-bar-track">
         <div class="gdb-bar-fill" style="width:52.0%;background:#10a37f;"></div>
         <div class="gdb-bar-err" style="left:46.6%;width:10.8%;"></div>
@@ -553,7 +552,7 @@ nav_order: 100
       <div class="gdb-bar-score">52.0% <span class="ci">±5.4</span></div>
     </div>
     <div class="gdb-bar-row">
-      <div class="gdb-bar-label"><span class="dot" style="background:#4285f4;"></span>gemini-3-flash-preview&nbsp;<span class="harness">[Gemini CLI]</span></div>
+      <div class="gdb-bar-label"><img class="logo" src="/assets/img/logos/gemini.svg" alt="gemini">gemini-3-flash-preview&nbsp;<span class="harness">[Gemini CLI]</span></div>
       <div class="gdb-bar-track">
         <div class="gdb-bar-fill" style="width:46.8%;background:#4285f4;"></div>
         <div class="gdb-bar-err" style="left:41.4%;width:10.8%;"></div>
@@ -561,7 +560,7 @@ nav_order: 100
       <div class="gdb-bar-score">46.8% <span class="ci">±5.4</span></div>
     </div>
     <div class="gdb-bar-row">
-      <div class="gdb-bar-label"><span class="dot" style="background:#10a37f;"></span>gpt-5.4-mini&nbsp;<span class="harness">[Codex]</span></div>
+      <div class="gdb-bar-label"><img class="logo" src="/assets/img/logos/openai.svg" alt="openai">gpt-5.4-mini&nbsp;<span class="harness">[Codex]</span></div>
       <div class="gdb-bar-track">
         <div class="gdb-bar-fill" style="width:43.2%;background:#10a37f;"></div>
         <div class="gdb-bar-err" style="left:37.9%;width:10.6%;"></div>
@@ -569,7 +568,7 @@ nav_order: 100
       <div class="gdb-bar-score">43.2% <span class="ci">±5.3</span></div>
     </div>
     <div class="gdb-bar-row">
-      <div class="gdb-bar-label"><span class="dot" style="background:#d97757;"></span>claude-sonnet-4-5&nbsp;<span class="harness">[Claude Code]</span></div>
+      <div class="gdb-bar-label"><img class="logo" src="/assets/img/logos/anthropic.svg" alt="anthropic">claude-sonnet-4-5&nbsp;<span class="harness">[Claude Code]</span></div>
       <div class="gdb-bar-track">
         <div class="gdb-bar-fill" style="width:34.8%;background:#d97757;"></div>
         <div class="gdb-bar-err" style="left:29.7%;width:10.2%;"></div>
@@ -577,7 +576,7 @@ nav_order: 100
       <div class="gdb-bar-score">34.8% <span class="ci">±5.1</span></div>
     </div>
     <div class="gdb-bar-row">
-      <div class="gdb-bar-label"><span class="dot" style="background:#cf3e3e;"></span>kimi-k2.5&nbsp;<span class="harness">[OpenHands]</span></div>
+      <div class="gdb-bar-label"><img class="logo" src="/assets/img/logos/moonshot.svg" alt="moonshot">kimi-k2.5&nbsp;<span class="harness">[OpenHands]</span></div>
       <div class="gdb-bar-track">
         <div class="gdb-bar-fill" style="width:20.7%;background:#cf3e3e;"></div>
         <div class="gdb-bar-err" style="left:16.3%;width:8.8%;"></div>
@@ -585,7 +584,7 @@ nav_order: 100
       <div class="gdb-bar-score">20.7% <span class="ci">±4.4</span></div>
     </div>
     <div class="gdb-bar-row">
-      <div class="gdb-bar-label"><span class="dot" style="background:#d97757;"></span>claude-haiku-4-5&nbsp;<span class="harness">[Claude Code]</span></div>
+      <div class="gdb-bar-label"><img class="logo" src="/assets/img/logos/anthropic.svg" alt="anthropic">claude-haiku-4-5&nbsp;<span class="harness">[Claude Code]</span></div>
       <div class="gdb-bar-track">
         <div class="gdb-bar-fill" style="width:18.6%;background:#d97757;"></div>
         <div class="gdb-bar-err" style="left:14.4%;width:8.4%;"></div>
@@ -593,7 +592,7 @@ nav_order: 100
       <div class="gdb-bar-score">18.6% <span class="ci">±4.2</span></div>
     </div>
     <div class="gdb-bar-row">
-      <div class="gdb-bar-label"><span class="dot" style="background:#7952b3;"></span>qwen3.5-397b&nbsp;<span class="harness">[OpenHands]</span></div>
+      <div class="gdb-bar-label"><img class="logo" src="/assets/img/logos/qwen.svg" alt="qwen">qwen3.5-397b&nbsp;<span class="harness">[OpenHands]</span></div>
       <div class="gdb-bar-track">
         <div class="gdb-bar-fill" style="width:5.4%;background:#7952b3;"></div>
         <div class="gdb-bar-err" style="left:3.0%;width:4.8%;"></div>
