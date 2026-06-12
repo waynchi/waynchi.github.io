@@ -175,6 +175,138 @@ nav_order: 100
     margin-bottom: 12px;
   }
 
+  /* TL;DR finding cards */
+  .gdb-tldr-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  @media (max-width: 640px) {
+    .gdb-tldr-grid { grid-template-columns: 1fr; }
+  }
+  .gdb-card {
+    border: 1px solid #d8d8d8;
+    padding: 20px 22px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .gdb-card .card-title {
+    font-size: 0.72em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: var(--global-text-color-light);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .gdb-card .card-title i {
+    font-size: 1.15em;
+    color: var(--global-text-color);
+  }
+  .gdb-card .card-text {
+    font-size: 0.9em;
+    line-height: 1.6;
+    color: var(--global-text-color);
+    margin: 0;
+  }
+  .gdb-card .big-num {
+    font-family: 'SF Mono', 'Fira Code', 'Courier New', monospace;
+    font-size: 2.6em;
+    font-weight: 800;
+    line-height: 1.1;
+    color: var(--global-text-color);
+  }
+  .gdb-card .big-num .sub {
+    font-size: 0.32em;
+    font-weight: 600;
+    color: var(--global-text-color-light);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    margin-top: 2px;
+  }
+  /* segmented distribution bar */
+  .gdb-seg-bar {
+    display: flex;
+    height: 14px;
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .gdb-seg-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 14px;
+    font-size: 0.74em;
+    font-family: 'SF Mono', 'Fira Code', 'Courier New', monospace;
+    color: var(--global-text-color-light);
+  }
+  .gdb-seg-legend span {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .gdb-seg-legend .sw {
+    width: 9px;
+    height: 9px;
+    border-radius: 2px;
+    display: inline-block;
+  }
+  /* mini bar rows */
+  .gdb-mini-row {
+    display: grid;
+    grid-template-columns: 78px 1fr 44px;
+    align-items: center;
+    gap: 8px;
+    font-family: 'SF Mono', 'Fira Code', 'Courier New', monospace;
+    font-size: 0.76em;
+  }
+  .gdb-mini-row .lbl { color: var(--global-text-color-light); white-space: nowrap; }
+  .gdb-mini-row .val { text-align: right; font-weight: 700; color: var(--global-text-color); }
+  .gdb-mini-track {
+    height: 10px;
+    background: #f4f4f4;
+    border-radius: 2px;
+    position: relative;
+  }
+  .gdb-mini-fill {
+    position: absolute;
+    left: 0; top: 0; height: 100%;
+    border-radius: 2px;
+  }
+  /* before/after arrow */
+  .gdb-lift {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    font-family: 'SF Mono', 'Fira Code', 'Courier New', monospace;
+  }
+  .gdb-lift .from {
+    font-size: 1.7em;
+    font-weight: 600;
+    color: var(--global-text-color-light);
+    text-decoration: line-through;
+    text-decoration-thickness: 2px;
+    text-decoration-color: #c0392b88;
+  }
+  .gdb-lift .arrow { font-size: 1.3em; color: var(--global-text-color-light); }
+  .gdb-lift .to {
+    font-size: 2.3em;
+    font-weight: 800;
+    color: #1a9e5c;
+  }
+  .gdb-lift .delta {
+    font-size: 0.84em;
+    font-weight: 700;
+    color: #1a9e5c;
+    background: rgba(26,158,92,0.1);
+    padding: 3px 8px;
+    border-radius: 3px;
+  }
+  html[data-theme='dark'] .gdb-card { border-color: #3a3a3a; }
+  html[data-theme='dark'] .gdb-mini-track { background: #242424; }
+
   /* Teaser */
   .gdb-teaser img {
     width: 100%;
@@ -508,14 +640,53 @@ nav_order: 100
 <!-- TL;DR -->
 <div class="gdb-section">
   <h2>TL;DR</h2>
-  <div class="gdb-abstract">
-    <ul style="line-height: 1.8;">
-      <li>GameDevBench is the first benchmark for evaluating LM agents on game development tasks.</li>
-      <li>GameDevBench features 333 tasks set in the Godot engine, collected from web and video tutorials across four skill categories: gameplay logic (collision detectors, character controllers), 3D graphics and animation (material tuning, skeletal animation), 2D graphics and animation (sprite animation, TileMap setup), and user interface (HUD layout, menu navigation).</li>
-      <li>Tasks require agents to navigate large codebases and manipulate multimodal assets such as shaders, sprites, and animations &mdash; the average solution requires over 3&times; the lines of code and file changes of prior software development benchmarks.</li>
-      <li>Game development is hard for agents: the best agent and method solves only 53.8% of tasks, and success drops sharply on multimodally demanding tasks (51.4% on gameplay vs. 33.0% on 2D graphics).</li>
-      <li>Two simple image and video-based feedback mechanisms consistently improve performance &mdash; visual feedback lifts GPT-5.4 from 41.1% to 52.0%.</li>
-    </ul>
+  <div class="gdb-tldr-grid">
+
+    <div class="gdb-card">
+      <div class="card-title"><i class="fas fa-gamepad"></i> The first game-dev benchmark for agents</div>
+      <div class="gdb-seg-bar">
+        <div style="width:33.3%;background:#4285f4;"></div>
+        <div style="width:26.7%;background:#10a37f;"></div>
+        <div style="width:20.1%;background:#d97757;"></div>
+        <div style="width:19.8%;background:#7952b3;"></div>
+      </div>
+      <div class="gdb-seg-legend">
+        <span><span class="sw" style="background:#4285f4;"></span>2D Graphics 33%</span>
+        <span><span class="sw" style="background:#10a37f;"></span>3D Graphics 27%</span>
+        <span><span class="sw" style="background:#d97757;"></span>UI 20%</span>
+        <span><span class="sw" style="background:#7952b3;"></span>Gameplay 20%</span>
+      </div>
+      <p class="card-text">333 real tasks in the Godot engine &mdash; shaders, sprites, animations, and scenes, not just code.</p>
+    </div>
+
+    <div class="gdb-card">
+      <div class="card-title"><i class="fas fa-triangle-exclamation"></i> Agents struggle</div>
+      <div class="big-num">53.8%<span class="sub">best agent score</span></div>
+      <p class="card-text">Even the strongest agent fails nearly half the benchmark.</p>
+    </div>
+
+    <div class="gdb-card">
+      <div class="card-title"><i class="fas fa-eye"></i> Multimodality is the bottleneck</div>
+      <div style="display:flex;flex-direction:column;gap:7px;">
+        <div class="gdb-mini-row"><span class="lbl">Gameplay</span><div class="gdb-mini-track"><div class="gdb-mini-fill" style="width:51.4%;background:#1a9e5c;"></div></div><span class="val">51.4%</span></div>
+        <div class="gdb-mini-row"><span class="lbl">3D Graphics</span><div class="gdb-mini-track"><div class="gdb-mini-fill" style="width:38.4%;background:#e8a33d;"></div></div><span class="val">38.4%</span></div>
+        <div class="gdb-mini-row"><span class="lbl">2D Graphics</span><div class="gdb-mini-track"><div class="gdb-mini-fill" style="width:33.0%;background:#c0392b;"></div></div><span class="val">33.0%</span></div>
+        <div class="gdb-mini-row"><span class="lbl">UI</span><div class="gdb-mini-track"><div class="gdb-mini-fill" style="width:32.0%;background:#c0392b;"></div></div><span class="val">32.0%</span></div>
+      </div>
+      <p class="card-text">The more visual understanding a task demands, the more agents fail.</p>
+    </div>
+
+    <div class="gdb-card">
+      <div class="card-title"><i class="fas fa-video"></i> Visual feedback works</div>
+      <div class="gdb-lift">
+        <span class="from">41.1%</span>
+        <span class="arrow">&rarr;</span>
+        <span class="to">52.0%</span>
+        <span class="delta">+10.9</span>
+      </div>
+      <p class="card-text">Letting agents see screenshots and gameplay video consistently boosts performance (GPT-5.4 shown).</p>
+    </div>
+
   </div>
 </div>
 
