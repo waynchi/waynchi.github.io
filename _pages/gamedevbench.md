@@ -194,89 +194,113 @@ nav_order: 100
     border: 1px solid #e0e0e0;
   }
 
-  /* Leaderboard */
-  .gdb-leaderboard {
+  /* Leaderboard bar chart */
+  .gdb-chart {
     border: 1px solid #d8d8d8;
-    overflow: hidden;
     background: var(--global-bg-color, #fff);
+    padding: 18px 22px 12px;
   }
-  .gdb-lb-table {
-    width: 100%;
-    border-collapse: collapse;
+  .gdb-bar-row {
+    display: grid;
+    grid-template-columns: 250px 1fr 118px;
+    align-items: center;
+    gap: 14px;
+    padding: 9px 0;
+    border-bottom: 1px solid #efefef;
   }
-  .gdb-lb-table th {
-    padding: 9px 16px;
-    text-align: left;
-    font-weight: 700;
-    font-size: 0.72em;
-    text-transform: uppercase;
-    letter-spacing: 0.8px;
-    color: #555;
-    border-bottom: 2px solid #d0d0d0;
-    border-right: 1px solid #e4e4e4;
-    background: #f2f2f2;
-    white-space: nowrap;
-  }
-  .gdb-lb-table th:first-child {
-    width: 52px;
-    text-align: center;
-  }
-  .gdb-lb-table th:last-child {
-    text-align: right;
-    border-right: none;
-  }
-  .gdb-lb-table td {
-    padding: 10px 16px;
-    border-bottom: 1px solid #eeeeee;
-    border-right: 1px solid #eeeeee;
-    font-size: 0.91em;
-    font-variant-numeric: tabular-nums;
-  }
-  .gdb-lb-table td:last-child {
-    border-right: none;
-  }
-  .gdb-lb-table tr:last-child td {
+  .gdb-bar-row:last-of-type {
     border-bottom: none;
   }
-  .gdb-lb-table tr:hover {
-    background: rgba(0,0,0,0.025);
-  }
-  .gdb-lb-table .rank {
-    text-align: center;
-    font-weight: 700;
-    font-size: 0.95em;
-    color: #aaa;
+  .gdb-bar-label {
     font-family: 'SF Mono', 'Fira Code', 'Courier New', monospace;
-  }
-  .gdb-lb-table .rank-top {
-    color: #444;
-  }
-  .gdb-lb-table .model-name {
+    font-size: 0.84em;
     font-weight: 600;
-    font-family: 'SF Mono', 'Fira Code', 'Courier New', monospace;
-    font-size: 0.88em;
     color: var(--global-text-color);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+    overflow: hidden;
   }
-  .gdb-lb-table .model-name-top {
-    font-weight: 700;
+  .gdb-bar-label .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+    flex-shrink: 0;
   }
-  .gdb-lb-table .framework {
-    font-size: 0.87em;
+  .gdb-bar-label .harness {
+    font-weight: 400;
     color: var(--global-text-color-light);
-    font-family: 'SF Mono', 'Fira Code', 'Courier New', monospace;
+    font-size: 0.88em;
   }
-  .gdb-lb-table .score-cell {
+  .gdb-bar-track {
+    position: relative;
+    height: 16px;
+    background: #f4f4f4;
+    border-radius: 2px;
+  }
+  .gdb-bar-fill {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    border-radius: 2px;
+  }
+  .gdb-bar-err {
+    position: absolute;
+    top: 50%;
+    height: 1.5px;
+    background: rgba(0,0,0,0.65);
+    transform: translateY(-50%);
+  }
+  .gdb-bar-err::before,
+  .gdb-bar-err::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1.5px;
+    height: 9px;
+    background: rgba(0,0,0,0.65);
+  }
+  .gdb-bar-err::before { left: 0; }
+  .gdb-bar-err::after { right: 0; }
+  .gdb-bar-score {
     text-align: right;
-    font-weight: 700;
     font-family: 'SF Mono', 'Fira Code', 'Courier New', monospace;
-    font-size: 0.95em;
-    letter-spacing: 0.3px;
+    font-size: 0.86em;
+    font-weight: 700;
+    color: var(--global-text-color);
+    white-space: nowrap;
   }
-  .gdb-lb-table .score-hi  { color: #1a9e5c; }
-  .gdb-lb-table .score-mid { color: #2a7ab8; }
-  .gdb-lb-table .score-lo  { color: #c0392b; }
-  .gdb-lb-table .row-top-1 {
-    background: rgba(26,158,92,0.05);
+  .gdb-bar-score .ci {
+    font-weight: 400;
+    color: var(--global-text-color-light);
+    font-size: 0.88em;
+  }
+  .gdb-axis {
+    display: grid;
+    grid-template-columns: 250px 1fr 118px;
+    gap: 14px;
+    padding-top: 8px;
+  }
+  .gdb-axis-scale {
+    position: relative;
+    height: 16px;
+    font-family: 'SF Mono', 'Fira Code', 'Courier New', monospace;
+    font-size: 0.7em;
+    color: var(--global-text-color-light);
+  }
+  .gdb-axis-scale span {
+    position: absolute;
+    transform: translateX(-50%);
+  }
+  @media (max-width: 640px) {
+    .gdb-bar-row, .gdb-axis {
+      grid-template-columns: 130px 1fr 86px;
+      gap: 8px;
+    }
+    .gdb-bar-label .harness { display: none; }
   }
 
   /* BibTeX */
@@ -314,24 +338,19 @@ nav_order: 100
   }
 
   /* Dark mode */
-  html[data-theme='dark'] .gdb-leaderboard {
+  html[data-theme='dark'] .gdb-chart {
     border-color: #3a3a3a;
   }
-  html[data-theme='dark'] .gdb-lb-table th {
-    background: #1c1c1c;
-    color: #aaa;
-    border-bottom-color: #3a3a3a;
-    border-right-color: #2e2e2e;
-  }
-  html[data-theme='dark'] .gdb-lb-table td {
+  html[data-theme='dark'] .gdb-bar-row {
     border-bottom-color: #282828;
-    border-right-color: #282828;
   }
-  html[data-theme='dark'] .gdb-lb-table tr:hover {
-    background: rgba(255,255,255,0.04);
+  html[data-theme='dark'] .gdb-bar-track {
+    background: #242424;
   }
-  html[data-theme='dark'] .gdb-lb-table .row-top-1 {
-    background: rgba(26,158,92,0.08);
+  html[data-theme='dark'] .gdb-bar-err,
+  html[data-theme='dark'] .gdb-bar-err::before,
+  html[data-theme='dark'] .gdb-bar-err::after {
+    background: rgba(255,255,255,0.75);
   }
   html[data-theme='dark'] .gdb-section h2 {
     border-bottom-color: #3a3a3a;
@@ -381,11 +400,88 @@ nav_order: 100
   </a>
 </div>
 
-<!-- Teaser -->
-<div class="gdb-teaser" style="margin-bottom: 48px;">
-  <img src="/assets/img/gamedevbench-teaser.png" alt="GameDevBench task examples across 3D Graphics, 2D Graphics, Gameplay, and UI categories">
-  <p class="caption">
-    Example tasks from GameDevBench spanning 3D Graphics, 2D Graphics, Gameplay, and UI categories in the Godot engine.
+<!-- Leaderboard -->
+<div class="gdb-section">
+  <h2>Leaderboard</h2>
+  <div class="gdb-chart">
+    <div class="gdb-bar-row">
+      <div class="gdb-bar-label"><span class="dot" style="background:#4285f4;"></span>gemini-3-pro-preview&nbsp;<span class="harness">[Gemini CLI]</span></div>
+      <div class="gdb-bar-track">
+        <div class="gdb-bar-fill" style="width:53.8%;background:#4285f4;"></div>
+        <div class="gdb-bar-err" style="left:48.4%;width:10.8%;"></div>
+      </div>
+      <div class="gdb-bar-score">53.8% <span class="ci">±5.4</span></div>
+    </div>
+    <div class="gdb-bar-row">
+      <div class="gdb-bar-label"><span class="dot" style="background:#10a37f;"></span>gpt-5.4&nbsp;<span class="harness">[Codex]</span></div>
+      <div class="gdb-bar-track">
+        <div class="gdb-bar-fill" style="width:52.0%;background:#10a37f;"></div>
+        <div class="gdb-bar-err" style="left:46.6%;width:10.8%;"></div>
+      </div>
+      <div class="gdb-bar-score">52.0% <span class="ci">±5.4</span></div>
+    </div>
+    <div class="gdb-bar-row">
+      <div class="gdb-bar-label"><span class="dot" style="background:#4285f4;"></span>gemini-3-flash-preview&nbsp;<span class="harness">[Gemini CLI]</span></div>
+      <div class="gdb-bar-track">
+        <div class="gdb-bar-fill" style="width:46.8%;background:#4285f4;"></div>
+        <div class="gdb-bar-err" style="left:41.4%;width:10.8%;"></div>
+      </div>
+      <div class="gdb-bar-score">46.8% <span class="ci">±5.4</span></div>
+    </div>
+    <div class="gdb-bar-row">
+      <div class="gdb-bar-label"><span class="dot" style="background:#10a37f;"></span>gpt-5.4-mini&nbsp;<span class="harness">[Codex]</span></div>
+      <div class="gdb-bar-track">
+        <div class="gdb-bar-fill" style="width:43.2%;background:#10a37f;"></div>
+        <div class="gdb-bar-err" style="left:37.9%;width:10.6%;"></div>
+      </div>
+      <div class="gdb-bar-score">43.2% <span class="ci">±5.3</span></div>
+    </div>
+    <div class="gdb-bar-row">
+      <div class="gdb-bar-label"><span class="dot" style="background:#d97757;"></span>claude-sonnet-4-5&nbsp;<span class="harness">[Claude Code]</span></div>
+      <div class="gdb-bar-track">
+        <div class="gdb-bar-fill" style="width:34.8%;background:#d97757;"></div>
+        <div class="gdb-bar-err" style="left:29.7%;width:10.2%;"></div>
+      </div>
+      <div class="gdb-bar-score">34.8% <span class="ci">±5.1</span></div>
+    </div>
+    <div class="gdb-bar-row">
+      <div class="gdb-bar-label"><span class="dot" style="background:#cf3e3e;"></span>kimi-k2.5&nbsp;<span class="harness">[OpenHands]</span></div>
+      <div class="gdb-bar-track">
+        <div class="gdb-bar-fill" style="width:20.7%;background:#cf3e3e;"></div>
+        <div class="gdb-bar-err" style="left:16.3%;width:8.8%;"></div>
+      </div>
+      <div class="gdb-bar-score">20.7% <span class="ci">±4.4</span></div>
+    </div>
+    <div class="gdb-bar-row">
+      <div class="gdb-bar-label"><span class="dot" style="background:#d97757;"></span>claude-haiku-4-5&nbsp;<span class="harness">[Claude Code]</span></div>
+      <div class="gdb-bar-track">
+        <div class="gdb-bar-fill" style="width:18.6%;background:#d97757;"></div>
+        <div class="gdb-bar-err" style="left:14.4%;width:8.4%;"></div>
+      </div>
+      <div class="gdb-bar-score">18.6% <span class="ci">±4.2</span></div>
+    </div>
+    <div class="gdb-bar-row">
+      <div class="gdb-bar-label"><span class="dot" style="background:#7952b3;"></span>qwen3.5-397b&nbsp;<span class="harness">[OpenHands]</span></div>
+      <div class="gdb-bar-track">
+        <div class="gdb-bar-fill" style="width:5.4%;background:#7952b3;"></div>
+        <div class="gdb-bar-err" style="left:3.0%;width:4.8%;"></div>
+      </div>
+      <div class="gdb-bar-score">5.4% <span class="ci">±2.4</span></div>
+    </div>
+    <div class="gdb-axis">
+      <div></div>
+      <div class="gdb-axis-scale">
+        <span style="left:0;transform:none;">0%</span>
+        <span style="left:25%;">25%</span>
+        <span style="left:50%;">50%</span>
+        <span style="left:75%;">75%</span>
+        <span style="right:0;transform:none;">100%</span>
+      </div>
+      <div></div>
+    </div>
+  </div>
+  <p style="font-size: 0.83em; color: var(--global-text-color-light); margin-top: 10px;">
+    * <code>pass@1</code> (%) on all 333 tasks &mdash; best multimodal feedback configuration per model, in its best harness (ICML 2026 camera-ready results). Error bars are 95% confidence intervals.
   </p>
 </div>
 
@@ -402,10 +498,6 @@ nav_order: 100
   <div class="gdb-stat">
     <div class="num">4</div>
     <div class="label">Skill Categories</div>
-  </div>
-  <div class="gdb-stat">
-    <div class="num">114</div>
-    <div class="label">Avg. LOC / Solution</div>
   </div>
   <div class="gdb-stat">
     <div class="num">53.8%</div>
@@ -437,118 +529,6 @@ nav_order: 100
   <img class="gdb-example-img" src="/assets/img/gamedevbench-3d-example.png" alt="GameDevBench 3D example: water depth visualization task showing editor and code solutions">
 </div>
 
-<!-- Leaderboard -->
-<div class="gdb-section">
-  <h2>Leaderboard</h2>
-  <div class="gdb-leaderboard">
-    <table class="gdb-lb-table">
-      <thead>
-        <tr>
-          <th>Rank</th>
-          <th>Model</th>
-          <th>Org</th>
-          <th>Harness</th>
-          <th>Feedback</th>
-          <th style="text-align: right;">Score</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr class="row-top-1">
-          <td class="rank rank-top">1</td>
-          <td class="model-name model-name-top">gemini-3-pro-preview</td>
-          <td class="framework">Google</td>
-          <td class="framework">Gemini CLI</td>
-          <td class="framework">Screenshot + Video</td>
-          <td class="score-cell score-hi">53.8</td>
-        </tr>
-        <tr>
-          <td class="rank rank-top">2</td>
-          <td class="model-name">gpt-5.4</td>
-          <td class="framework">OpenAI</td>
-          <td class="framework">Codex</td>
-          <td class="framework">Screenshot + Video</td>
-          <td class="score-cell score-hi">52.0</td>
-        </tr>
-        <tr>
-          <td class="rank rank-top">3</td>
-          <td class="model-name">gemini-3-flash-preview</td>
-          <td class="framework">Google</td>
-          <td class="framework">Gemini CLI</td>
-          <td class="framework">Video</td>
-          <td class="score-cell score-hi">46.9</td>
-        </tr>
-        <tr>
-          <td class="rank">4</td>
-          <td class="model-name">gpt-5.4-mini</td>
-          <td class="framework">OpenAI</td>
-          <td class="framework">Codex</td>
-          <td class="framework">Video</td>
-          <td class="score-cell score-mid">43.2</td>
-        </tr>
-        <tr>
-          <td class="rank">5</td>
-          <td class="model-name">gpt-5.4-mini</td>
-          <td class="framework">OpenAI</td>
-          <td class="framework">OpenHands</td>
-          <td class="framework">Baseline</td>
-          <td class="score-cell score-mid">38.4</td>
-        </tr>
-        <tr>
-          <td class="rank">6</td>
-          <td class="model-name">claude-sonnet-4-5</td>
-          <td class="framework">Anthropic</td>
-          <td class="framework">Claude Code</td>
-          <td class="framework">Screenshot + Video</td>
-          <td class="score-cell score-mid">34.8</td>
-        </tr>
-        <tr>
-          <td class="rank">7</td>
-          <td class="model-name">gemini-3-flash-preview</td>
-          <td class="framework">Google</td>
-          <td class="framework">OpenHands</td>
-          <td class="framework">Screenshot + Video</td>
-          <td class="score-cell score-mid">31.8</td>
-        </tr>
-        <tr>
-          <td class="rank">8</td>
-          <td class="model-name">kimi-k2.5</td>
-          <td class="framework">Moonshot AI</td>
-          <td class="framework">OpenHands</td>
-          <td class="framework">Screenshot + Video</td>
-          <td class="score-cell score-lo">20.7</td>
-        </tr>
-        <tr>
-          <td class="rank">9</td>
-          <td class="model-name">claude-haiku-4-5</td>
-          <td class="framework">Anthropic</td>
-          <td class="framework">Claude Code</td>
-          <td class="framework">Video</td>
-          <td class="score-cell score-lo">18.6</td>
-        </tr>
-        <tr>
-          <td class="rank">10</td>
-          <td class="model-name">claude-haiku-4-5</td>
-          <td class="framework">Anthropic</td>
-          <td class="framework">OpenHands</td>
-          <td class="framework">Screenshot + Video</td>
-          <td class="score-cell score-lo">17.7</td>
-        </tr>
-        <tr>
-          <td class="rank">11</td>
-          <td class="model-name">qwen3.5-397b</td>
-          <td class="framework">Alibaba</td>
-          <td class="framework">OpenHands</td>
-          <td class="framework">Baseline</td>
-          <td class="score-cell score-lo">5.4</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  <p style="font-size: 0.83em; color: var(--global-text-color-light); margin-top: 10px;">
-    * <code>pass@1</code> (%) on all 333 tasks. Each row shows the best-performing multimodal feedback configuration for that model + harness pair (ICML 2026 camera-ready results). Screenshot = editor screenshot MCP server; Video = runtime gameplay video instructions.
-  </p>
-</div>
-
 <!-- BibTeX -->
 <div class="gdb-section">
   <h2>Citation</h2>
@@ -556,9 +536,10 @@ nav_order: 100
     <button class="copy-btn" onclick="navigator.clipboard.writeText(document.getElementById('bibtex-text').innerText)">
       <i class="fas fa-copy"></i> Copy
     </button>
-    <pre><code id="bibtex-text">@misc{chi2026gamedevbenchevaluatingagenticcapabilities,
+    <pre><code id="bibtex-text">@inproceedings{chi2026gamedevbenchevaluatingagenticcapabilities,
       title={GameDevBench: Evaluating Agentic Capabilities Through Game Development},
       author={Wayne Chi and Yixiong Fang and Arnav Yayavaram and Siddharth Yayavaram and Seth Karten and Qiuhong Anna Wei and Runkun Chen and Alexander Wang and Valerie Chen and Ameet Talwalkar and Chris Donahue},
+      booktitle={International Conference on Machine Learning (ICML)},
       year={2026},
       eprint={2602.11103},
       archivePrefix={arXiv},
