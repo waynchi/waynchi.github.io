@@ -533,7 +533,7 @@ nav_order: 100
 
 <!-- Leaderboard -->
 <div class="gdb-section">
-  <h2>Leaderboard</h2>
+  <h2 id="leaderboard">Leaderboard</h2>
   <div class="gdb-chart">
     <div class="gdb-bar-row">
       <div class="gdb-bar-label"><img class="logo" src="/assets/img/logos/gemini.svg" alt="gemini">gemini-3-pro-preview&nbsp;<span class="harness">[Gemini CLI]</span></div>
@@ -566,6 +566,14 @@ nav_order: 100
         <div class="gdb-bar-err" style="left:37.9%;width:10.6%;"></div>
       </div>
       <div class="gdb-bar-score">43.2% <span class="ci">±5.3</span></div>
+    </div>
+    <div class="gdb-bar-row">
+      <div class="gdb-bar-label">glm-5.2&nbsp;<span class="harness">[OpenCode]</span></div>
+      <div class="gdb-bar-track">
+        <div class="gdb-bar-fill" style="width:36.3%;background:#0f766e;"></div>
+        <div class="gdb-bar-err" style="left:31.1%;width:10.4%;"></div>
+      </div>
+      <div class="gdb-bar-score">36.3% <span class="ci">±5.2</span></div>
     </div>
     <div class="gdb-bar-row">
       <div class="gdb-bar-label"><img class="logo" src="/assets/img/logos/anthropic.svg" alt="anthropic">claude-sonnet-4-5&nbsp;<span class="harness">[Claude Code]</span></div>
