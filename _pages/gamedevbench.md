@@ -340,6 +340,12 @@ nav_order: 100
     padding: 9px 0;
     border-bottom: 1px solid #efefef;
   }
+  .gdb-bar-row.new {
+    margin: 0 -8px;
+    padding: 9px 8px;
+    background: rgba(15, 118, 110, 0.06);
+    border-left: 3px solid #0f766e;
+  }
   .gdb-bar-row:last-of-type {
     border-bottom: none;
   }
@@ -353,16 +359,34 @@ nav_order: 100
     gap: 8px;
     white-space: nowrap;
     overflow: hidden;
+    min-width: 0;
   }
   .gdb-bar-label .logo {
     width: 16px;
     height: 16px;
     flex-shrink: 0;
   }
+  .gdb-model-name {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
   .gdb-bar-label .harness {
     font-weight: 400;
     color: var(--global-text-color-light);
     font-size: 0.88em;
+  }
+  .gdb-new-badge {
+    flex-shrink: 0;
+    border: 1px solid rgba(15, 118, 110, 0.35);
+    background: rgba(15, 118, 110, 0.1);
+    color: #0f766e;
+    border-radius: 3px;
+    padding: 1px 5px;
+    font-family: 'SF Mono', 'Fira Code', 'Courier New', monospace;
+    font-size: 0.68em;
+    font-weight: 700;
+    text-transform: uppercase;
   }
   .gdb-bar-track {
     position: relative;
@@ -475,6 +499,15 @@ nav_order: 100
   html[data-theme='dark'] .gdb-bar-row {
     border-bottom-color: #282828;
   }
+  html[data-theme='dark'] .gdb-bar-row.new {
+    background: rgba(20, 184, 166, 0.1);
+    border-left-color: #14b8a6;
+  }
+  html[data-theme='dark'] .gdb-new-badge {
+    border-color: rgba(20, 184, 166, 0.45);
+    background: rgba(20, 184, 166, 0.14);
+    color: #5eead4;
+  }
   html[data-theme='dark'] .gdb-bar-track {
     background: #242424;
   }
@@ -535,6 +568,14 @@ nav_order: 100
 <div class="gdb-section">
   <h2 id="leaderboard">Leaderboard</h2>
   <div class="gdb-chart">
+    <div class="gdb-bar-row new">
+      <div class="gdb-bar-label"><img class="logo" src="/assets/img/logos/anthropic.svg" alt="anthropic"><span class="gdb-model-name">claude-opus-4-8</span><span class="harness">[Claude Code]</span><span class="gdb-new-badge">New</span></div>
+      <div class="gdb-bar-track">
+        <div class="gdb-bar-fill" style="width:55.9%;background:#d97757;"></div>
+        <div class="gdb-bar-err" style="left:50.6%;width:10.6%;"></div>
+      </div>
+      <div class="gdb-bar-score">55.9% <span class="ci">±5.3</span></div>
+    </div>
     <div class="gdb-bar-row">
       <div class="gdb-bar-label"><img class="logo" src="/assets/img/logos/gemini.svg" alt="gemini">gemini-3-pro-preview&nbsp;<span class="harness">[Gemini CLI]</span></div>
       <div class="gdb-bar-track">
@@ -567,8 +608,8 @@ nav_order: 100
       </div>
       <div class="gdb-bar-score">43.2% <span class="ci">±5.3</span></div>
     </div>
-    <div class="gdb-bar-row">
-      <div class="gdb-bar-label"><img class="logo" src="/assets/img/logos/zai.svg" alt="Z.ai">glm-5.2&nbsp;<span class="harness">[OpenCode]</span></div>
+    <div class="gdb-bar-row new">
+      <div class="gdb-bar-label"><img class="logo" src="/assets/img/logos/zai.svg" alt="Z.ai"><span class="gdb-model-name">glm-5.2</span><span class="harness">[OpenCode]</span><span class="gdb-new-badge">New</span></div>
       <div class="gdb-bar-track">
         <div class="gdb-bar-fill" style="width:38.4%;background:#0f766e;"></div>
         <div class="gdb-bar-err" style="left:33.2%;width:10.4%;"></div>
