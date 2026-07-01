@@ -327,6 +327,11 @@ nav_order: 100
   }
 
   /* Leaderboard bar chart */
+  .gdb-leaderboard-section {
+    width: min(960px, calc(100vw - 48px));
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
   .gdb-chart {
     border: 1px solid #d8d8d8;
     background: var(--global-bg-color, #fff);
@@ -334,7 +339,7 @@ nav_order: 100
   }
   .gdb-bar-row {
     display: grid;
-    grid-template-columns: 318px 1fr 118px;
+    grid-template-columns: minmax(250px, 320px) minmax(240px, 1fr) 118px;
     align-items: center;
     gap: 14px;
     padding: 9px 0;
@@ -435,7 +440,7 @@ nav_order: 100
   }
   .gdb-axis {
     display: grid;
-    grid-template-columns: 318px 1fr 118px;
+    grid-template-columns: minmax(250px, 320px) minmax(240px, 1fr) 118px;
     gap: 14px;
     padding-top: 8px;
   }
@@ -451,9 +456,45 @@ nav_order: 100
     transform: translateX(-50%);
   }
   @media (max-width: 640px) {
-    .gdb-bar-row, .gdb-axis {
-      grid-template-columns: 130px 1fr 86px;
-      gap: 8px;
+    .gdb-leaderboard-section {
+      width: calc(100vw - 30px);
+    }
+    .gdb-chart {
+      padding: 14px 14px 12px;
+    }
+    .gdb-bar-row {
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 7px 10px;
+      padding: 10px 0;
+    }
+    .gdb-bar-row.new {
+      margin: 0 -6px;
+      padding: 10px 6px;
+    }
+    .gdb-bar-label {
+      grid-column: 1;
+      grid-row: 1;
+    }
+    .gdb-bar-track {
+      grid-column: 1 / -1;
+      grid-row: 2;
+    }
+    .gdb-bar-score {
+      grid-column: 2;
+      grid-row: 1;
+      font-size: 0.82em;
+    }
+    .gdb-axis {
+      display: block;
+      padding-top: 8px;
+    }
+    .gdb-axis > div:first-child,
+    .gdb-axis > div:last-child {
+      display: none;
+    }
+    .gdb-axis-scale span:nth-child(2),
+    .gdb-axis-scale span:nth-child(4) {
+      display: none;
     }
     .gdb-bar-label .harness { display: none; }
   }
@@ -565,7 +606,7 @@ nav_order: 100
 </div>
 
 <!-- Leaderboard -->
-<div class="gdb-section">
+<div class="gdb-section gdb-leaderboard-section">
   <h2 id="leaderboard">Leaderboard</h2>
   <div class="gdb-chart">
     <div class="gdb-bar-row new">
@@ -680,7 +721,7 @@ nav_order: 100
     <div class="label">Skill Categories</div>
   </div>
   <div class="gdb-stat">
-    <div class="num">53.8%</div>
+    <div class="num">55.9%</div>
     <div class="label">Best Agent Score</div>
   </div>
 </div>
@@ -709,7 +750,7 @@ nav_order: 100
 
     <div class="gdb-card">
       <div class="card-title"><i class="fas fa-triangle-exclamation"></i> Agents struggle</div>
-      <div class="big-num">53.8%<span class="sub">best agent score</span></div>
+      <div class="big-num">55.9%<span class="sub">best agent score</span></div>
       <p class="card-text">Even the strongest agent fails nearly half the benchmark.</p>
     </div>
 
