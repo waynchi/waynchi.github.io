@@ -610,15 +610,39 @@ nav_order: 100
   <h2 id="leaderboard">Leaderboard</h2>
   <div class="gdb-chart">
     <div class="gdb-bar-row new">
-      <div class="gdb-bar-label"><img class="logo" src="/assets/img/logos/anthropic.svg" alt="anthropic"><span class="gdb-model-name">claude-opus-4-8</span><span class="harness">[Claude Code]</span><span class="gdb-new-badge">New</span></div>
+      <div class="gdb-bar-label"><img class="logo" src="/assets/img/logos/openai.svg" alt="openai"><span class="gdb-model-name">gpt-5.6-sol xhigh</span><span class="harness">[Codex]</span><span class="gdb-new-badge">New</span></div>
+      <div class="gdb-bar-track">
+        <div class="gdb-bar-fill" style="width:63.7%;background:#10a37f;"></div>
+        <div class="gdb-bar-err" style="left:58.5%;width:10.3%;"></div>
+      </div>
+      <div class="gdb-bar-score">63.7% <span class="ci">±5.2</span></div>
+    </div>
+    <div class="gdb-bar-row new">
+      <div class="gdb-bar-label"><img class="logo" src="/assets/img/logos/openai.svg" alt="openai"><span class="gdb-model-name">gpt-5.6-sol high</span><span class="harness">[Codex]</span><span class="gdb-new-badge">New</span></div>
+      <div class="gdb-bar-track">
+        <div class="gdb-bar-fill" style="width:63.1%;background:#10a37f;"></div>
+        <div class="gdb-bar-err" style="left:57.9%;width:10.4%;"></div>
+      </div>
+      <div class="gdb-bar-score">63.1% <span class="ci">±5.2</span></div>
+    </div>
+    <div class="gdb-bar-row new">
+      <div class="gdb-bar-label"><img class="logo" src="/assets/img/logos/openai.svg" alt="openai"><span class="gdb-model-name">gpt-5.6-sol medium rerun</span><span class="harness">[Codex]</span><span class="gdb-new-badge">New</span></div>
+      <div class="gdb-bar-track">
+        <div class="gdb-bar-fill" style="width:58.6%;background:#10a37f;"></div>
+        <div class="gdb-bar-err" style="left:53.3%;width:10.6%;"></div>
+      </div>
+      <div class="gdb-bar-score">58.6% <span class="ci">±5.3</span></div>
+    </div>
+    <div class="gdb-bar-row">
+      <div class="gdb-bar-label"><img class="logo" src="/assets/img/logos/anthropic.svg" alt="anthropic"><span class="gdb-model-name">claude-opus-4-8</span><span class="harness">[Claude Code]</span></div>
       <div class="gdb-bar-track">
         <div class="gdb-bar-fill" style="width:55.9%;background:#d97757;"></div>
         <div class="gdb-bar-err" style="left:50.6%;width:10.6%;"></div>
       </div>
       <div class="gdb-bar-score">55.9% <span class="ci">±5.3</span></div>
     </div>
-    <div class="gdb-bar-row new">
-      <div class="gdb-bar-label"><img class="logo" src="/assets/img/logos/openai.svg" alt="openai"><span class="gdb-model-name">gpt-5.5</span><span class="harness">[Codex]</span><span class="gdb-new-badge">New</span></div>
+    <div class="gdb-bar-row">
+      <div class="gdb-bar-label"><img class="logo" src="/assets/img/logos/openai.svg" alt="openai"><span class="gdb-model-name">gpt-5.5</span><span class="harness">[Codex]</span></div>
       <div class="gdb-bar-track">
         <div class="gdb-bar-fill" style="width:54.7%;background:#10a37f;"></div>
         <div class="gdb-bar-err" style="left:49.4%;width:10.6%;"></div>
@@ -657,8 +681,8 @@ nav_order: 100
       </div>
       <div class="gdb-bar-score">43.2% <span class="ci">±5.3</span></div>
     </div>
-    <div class="gdb-bar-row new">
-      <div class="gdb-bar-label"><img class="logo" src="/assets/img/logos/zai.svg" alt="Z.ai"><span class="gdb-model-name">glm-5.2</span><span class="harness">[OpenCode]</span><span class="gdb-new-badge">New</span></div>
+    <div class="gdb-bar-row">
+      <div class="gdb-bar-label"><img class="logo" src="/assets/img/logos/zai.svg" alt="Z.ai"><span class="gdb-model-name">glm-5.2</span><span class="harness">[OpenCode]</span></div>
       <div class="gdb-bar-track">
         <div class="gdb-bar-fill" style="width:38.4%;background:#0f766e;"></div>
         <div class="gdb-bar-err" style="left:33.2%;width:10.4%;"></div>
@@ -729,7 +753,7 @@ nav_order: 100
     <div class="label">Skill Categories</div>
   </div>
   <div class="gdb-stat">
-    <div class="num">55.9%</div>
+    <div class="num">63.7%</div>
     <div class="label">Best Agent Score</div>
   </div>
 </div>
@@ -758,7 +782,7 @@ nav_order: 100
 
     <div class="gdb-card">
       <div class="card-title"><i class="fas fa-triangle-exclamation"></i> Agents struggle</div>
-      <div class="big-num">55.9%<span class="sub">best agent score</span></div>
+      <div class="big-num">63.7%<span class="sub">best agent score</span></div>
       <p class="card-text">Even the strongest agent fails nearly half the benchmark.</p>
     </div>
 
