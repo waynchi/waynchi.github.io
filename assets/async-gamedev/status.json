@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "lifecycle": "deploying",
+  "lifecycle_detail": "Publishing v0001",
+  "current_version": "v0001",
+  "game_url": "/assets/async-gamedev/releases/v0001/index.html",
+  "deployed_at": null,
+  "release_notes": [
+    "A randomized 25-hex fantasy realm with a low-poly storybook presentation.",
+    "Choose one of three buildings each turn and discover five cascading recipes.",
+    "Create the Arcane Keep before every tile fills."
+  ],
+  "artifact_sha256": "2d0a557efcccc8ce866f7c206ad63e7dbbdaa1648aedfd45c8fd53096828ec6d"
+}
