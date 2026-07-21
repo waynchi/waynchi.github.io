@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
   "lifecycle": "deploying",
-  "lifecycle_detail": "Publishing v0007",
-  "current_version": "v0007",
-  "game_url": "/assets/async-gamedev/releases/v0007/index.html",
+  "lifecycle_detail": "Publishing v0008",
+  "current_version": "v0008",
+  "game_url": "/assets/async-gamedev/releases/v0008/index.html",
   "deployed_at": null,
   "release_notes": [
     "A randomized 25-hex fantasy realm with a low-poly storybook presentation.",
