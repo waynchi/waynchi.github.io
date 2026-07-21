@@ -99,7 +99,7 @@ nav: false
   const MAX_VIDEO_BYTES = 2 * 1024 * 1024 * 1024;
   const els = Object.fromEntries([
     'lifecycle','version','published','game','lock','password','unlock','auth-error','notes','submit','dot','recording-label','submit-error','receipt','release-notes'
-  ].map(name => [name, document.getElementById(`agd-${name}`)]));
+  ].map(name => [name.replace(/-([a-z])/g, (_, letter) => letter.toUpperCase()), document.getElementById(`agd-${name}`)]));
 
   let status = null;
   let token = sessionStorage.getItem('hexhaven-feedback-token');
@@ -290,4 +290,3 @@ nav: false
   setInterval(refreshStatus, 60000);
 })();
 </script>
-
