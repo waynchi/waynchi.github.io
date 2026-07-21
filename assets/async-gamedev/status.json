@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "lifecycle": "deploying",
-  "lifecycle_detail": "Publishing v0009",
+  "lifecycle": "awaiting_feedback",
+  "lifecycle_detail": "Playable build verified",
   "current_version": "v0009",
   "game_url": "/assets/async-gamedev/releases/v0009/index.html",
-  "deployed_at": null,
+  "deployed_at": "2026-07-21T06:38:48.548Z",
   "release_notes": [
     "A randomized 25-hex fantasy realm with a low-poly storybook presentation.",
     "Choose one of three buildings each turn and discover five cascading recipes.",
