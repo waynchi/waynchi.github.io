@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "lifecycle": "deploying",
-  "lifecycle_detail": "Publishing v0010",
+  "lifecycle": "awaiting_feedback",
+  "lifecycle_detail": "Playable build verified",
   "current_version": "v0010",
   "game_url": "/assets/async-gamedev/releases/v0010/index.html",
-  "deployed_at": null,
+  "deployed_at": "2026-07-22T09:07:16.937Z",
   "release_notes": [
     "Restored the matching `better-sqlite3` native dependency removed during the prior failed rebuild.",
     "Made Godot test/build scripts create writable temporary cache, config, and data directories automatically.",
