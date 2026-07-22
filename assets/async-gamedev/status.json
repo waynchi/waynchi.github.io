@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "lifecycle": "deploying",
-  "lifecycle_detail": "Publishing v0011",
+  "lifecycle": "awaiting_feedback",
+  "lifecycle_detail": "Playable build verified",
   "current_version": "v0011",
   "game_url": "/assets/async-gamedev/releases/v0011/index.html",
-  "deployed_at": null,
+  "deployed_at": "2026-07-22T18:19:59.774Z",
   "release_notes": [
     "Added three winning legacies: Crown Keep, World Tree, and Arcane Spire, supported by new Bastion, Guildhall, Grand Bazaar, and Mage Tower branches.",
     "Runs now begin with a seeded Hearth, Wild, or Guild opening. Magical terrain grants affinity bonuses, while Royal Charters award renown and additional redraws.",
