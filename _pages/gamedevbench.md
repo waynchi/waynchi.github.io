@@ -665,6 +665,14 @@ nav_order: 100
       </div>
       <div class="gdb-bar-score">52.0% <span class="ci">±5.4</span></div>
     </div>
+    <div class="gdb-bar-row new">
+      <div class="gdb-bar-label"><img class="logo" src="/assets/img/logos/moonshot.svg" alt="moonshot"><span class="gdb-model-name">kimi-k3</span><span class="harness">[Kimi Code]</span><span class="gdb-new-badge">New</span></div>
+      <div class="gdb-bar-track">
+        <div class="gdb-bar-fill" style="width:50.8%;background:#cf3e3e;"></div>
+        <div class="gdb-bar-err" style="left:45.4%;width:10.7%;"></div>
+      </div>
+      <div class="gdb-bar-score">50.8% <span class="ci">±5.4</span></div>
+    </div>
     <div class="gdb-bar-row">
       <div class="gdb-bar-label"><img class="logo" src="/assets/img/logos/gemini.svg" alt="gemini">gemini-3-flash-preview&nbsp;<span class="harness">[Gemini CLI]</span></div>
       <div class="gdb-bar-track">
