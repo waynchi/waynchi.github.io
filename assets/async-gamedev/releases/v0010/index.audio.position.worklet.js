@@ -1,0 +1,5 @@
+/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
+/* The above copyright notice and this permission notice shall be         */
+/* IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY   */
+class GodotPositionReportingProcessor extends AudioWorkletProcessor{static get parameterDescriptors(){return[{name:"reset",defaultValue:0,minValue:0,maxValue:1,automationRate:"k-rate"}]}constructor(...o){super(...o),this.position=0}process(o,t,s){if(s.reset[0]>0&&(this.position=0),o.length>0){const t=o[0];t.length>0&&(this.position+=t[0].length,this.port.postMessage({type:"position",data:this.position}))}return!0}}registerProcessor("godot-position-reporting-processor",GodotPositionReportingProcessor);
