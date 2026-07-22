@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "lifecycle": "retrying",
-  "lifecycle_detail": "Iteration attempt failed. Automatically retrying at Jul 22, 2026, 08:57 UTC: npm test exited 1\nnpm notice\nnpm notice New major version of npm available! 10.8.2 -> 12.0.1\nnpm notice Changelog: https://github.com/npm/cli/releases/tag/v12.0.1\nnpm notice To update run: npm install -g npm@12.0.1\nnpm notice\n",
+  "lifecycle": "developing",
+  "lifecycle_detail": "Resuming development from 1 queued feedback session",
   "current_version": "v0009",
   "game_url": "/assets/async-gamedev/releases/v0009/index.html",
   "deployed_at": "2026-07-21T06:38:48.548Z",
