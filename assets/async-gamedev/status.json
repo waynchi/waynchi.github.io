@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "lifecycle": "developing",
-  "lifecycle_detail": "Feedback received; developing the next release from 1 session",
+  "lifecycle": "retrying",
+  "lifecycle_detail": "Codex usage limit reached. The queued feedback is safe; automatically retrying at Jul 25, 2026, 03:25 UTC.",
   "current_version": "v0009",
   "game_url": "/assets/async-gamedev/releases/v0009/index.html",
   "deployed_at": "2026-07-21T06:38:48.548Z",
