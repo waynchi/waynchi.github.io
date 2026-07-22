@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "lifecycle": "developing",
-  "lifecycle_detail": "Feedback received; developing the next release from 1 session",
+  "lifecycle": "retrying",
+  "lifecycle_detail": "Codex capacity is available; queued feedback is safe. Worker paused until the Linux Bubblewrap sandbox profile is installed.",
   "current_version": "v0009",
   "game_url": "/assets/async-gamedev/releases/v0009/index.html",
   "deployed_at": "2026-07-21T06:38:48.548Z",
