@@ -1,14 +1,14 @@
 ---
 layout: page
 permalink: /async-gamedev/
-title: Async Game Development
+title: Drop Orchestra — Async Game Development
 nav: false
 ---
 
 <style>
   .post-header { display: none; }
   .post { max-width: 1180px; margin: 0 auto; }
-  .agd-shell { --ink:#17263a; --muted:#657383; --gold:#d6a94d; --paper:#f5f0e5; color:var(--ink); }
+  .agd-shell { --ink:#17263a; --muted:#657383; --gold:#d19b4b; --paper:#f5f0e5; color:var(--ink); }
   html[data-theme='dark'] .agd-shell { --ink:#edf1e8; --muted:#a6b2b9; --paper:#17243a; }
   .agd-hero { display:flex; justify-content:space-between; align-items:flex-end; gap:24px; margin:18px 0 20px; }
   .agd-kicker { font:700 .72rem/1.2 'SF Mono',monospace; letter-spacing:.16em; text-transform:uppercase; color:var(--gold); }
@@ -47,8 +47,8 @@ nav: false
   <section class="agd-hero">
     <div>
       <div class="agd-kicker">A game made in conversation</div>
-      <h1>Hexhaven</h1>
-      <p>Shape a 5×5 enchanted realm across magical terrain. Fulfill royal charters and connect recipes toward one of three legendary endings. Your play session becomes the brief for the next release.</p>
+      <h1>Drop Orchestra</h1>
+      <p>Build a kinetic orchestra: place pitched bumpers, conduct falling balls with gravity, and route longer melodies into the goal. Your recorded play session becomes the brief for the next release.</p>
     </div>
     <div class="agd-status" aria-live="polite">
       <div class="agd-status-row"><span>Agent</span><span id="agd-lifecycle" class="agd-status-value">Loading</span></div>
@@ -59,7 +59,7 @@ nav: false
   </section>
 
   <section class="agd-stage">
-    <iframe id="agd-game" title="Hexhaven game" allow="autoplay; fullscreen" allowfullscreen loading="eager"></iframe>
+    <iframe id="agd-game" title="Drop Orchestra game" allow="autoplay; fullscreen" allowfullscreen loading="eager"></iframe>
     <div id="agd-lock" class="agd-lock">
       <div class="agd-lock-card">
         <div class="agd-kicker">Private testing controls</div>
@@ -97,14 +97,14 @@ nav: false
   'use strict';
   const API_BASE = 'https://bass.cs.cmu.edu';
   const STATUS_URL = '/assets/async-gamedev/status.json';
-  const DB_NAME = 'hexhaven-recordings-v1';
+  const DB_NAME = 'drop-orchestra-recordings-v1';
   const MAX_VIDEO_BYTES = 2 * 1024 * 1024 * 1024;
   const els = Object.fromEntries([
     'lifecycle','version','published','detail','game','lock','password','unlock','auth-error','notes','submit','dot','recording-label','submit-error','receipt','release-notes'
   ].map(name => [name.replace(/-([a-z])/g, (_, letter) => letter.toUpperCase()), document.getElementById(`agd-${name}`)]));
 
   let status = null;
-  let token = sessionStorage.getItem('hexhaven-feedback-token');
+  let token = sessionStorage.getItem('drop-orchestra-feedback-token');
   let sessionId = null;
   let sessionStartedAt = null;
   let recorder = null;
@@ -128,7 +128,7 @@ nav: false
       els.published.textContent = status.deployed_at ? new Date(status.deployed_at).toLocaleString() : '—';
       els.detail.textContent = status.lifecycle_detail || 'Worker status is available.';
       els.releaseNotes.innerHTML = '';
-      for (const note of status.release_notes || ['First playable realm.']) {
+      for (const note of status.release_notes || ['The first Drop Orchestra concert is ready.']) {
         const li = document.createElement('li'); li.textContent = note; els.releaseNotes.appendChild(li);
       }
       if (!els.game.src && status.game_url) els.game.src = status.game_url;
@@ -195,7 +195,7 @@ nav: false
       if (!response.ok) throw new Error(response.status === 401 ? 'Incorrect passphrase.' : `API returned ${response.status}.`);
       const body = await response.json();
       token = body.token;
-      sessionStorage.setItem('hexhaven-feedback-token', token);
+      sessionStorage.setItem('drop-orchestra-feedback-token', token);
       sessionId = crypto.randomUUID();
       sessionStartedAt = new Date().toISOString();
       actions = [];
@@ -280,11 +280,11 @@ nav: false
   }
 
   window.addEventListener('message', event => {
-    if (event.origin !== window.location.origin || !event.data || event.data.source !== 'hexhaven') return;
+    if (event.origin !== window.location.origin || !event.data || event.data.source !== 'drop_orchestra') return;
     const gameEvent = event.data.event;
     actions.push(gameEvent);
     if (gameEvent && gameEvent.data && gameEvent.data.snapshot) latestSnapshot = gameEvent.data.snapshot;
-    else if (gameEvent && ['session_started','run_completed'].includes(gameEvent.type)) latestSnapshot = gameEvent.data;
+    else if (gameEvent && ['session_started','concert_completed'].includes(gameEvent.type)) latestSnapshot = gameEvent.data.snapshot || gameEvent.data;
   });
 
   els.unlock.addEventListener('click', authenticate);

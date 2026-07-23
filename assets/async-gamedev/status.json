@@ -1,19 +1,17 @@
 {
   "schema_version": 1,
-  "lifecycle": "awaiting_feedback",
-  "lifecycle_detail": "Playable build verified",
-  "current_version": "v0011",
-  "game_url": "/assets/async-gamedev/releases/v0011/index.html",
-  "deployed_at": "2026-07-22T18:19:59.774Z",
+  "lifecycle": "deploying",
+  "lifecycle_detail": "Publishing v0012",
+  "current_version": "v0012",
+  "game_url": "/assets/async-gamedev/releases/v0012/index.html",
+  "deployed_at": null,
   "release_notes": [
-    "Added three winning legacies: Crown Keep, World Tree, and Arcane Spire, supported by new Bastion, Guildhall, Grand Bazaar, and Mage Tower branches.",
-    "Runs now begin with a seeded Hearth, Wild, or Guild opening. Magical terrain grants affinity bonuses, while Royal Charters award renown and additional redraws.",
-    "Added salvage mode for recovering occupied squares, addressing the repeated invalid-placement frustration seen in the playtest.",
-    "Replaced primitive models with 16 authored building sprites, four illustrated terrain types, and an enchanted valley backdrop. Merge feedback now includes sprite pops, particles, flashes, camera shake, streak messaging, and synthesized chimes.",
-    "Rebuilt the right-side guide around readable legacy routes, charters, and core recipes. Building labels remain removed; fullscreen and keyboard shortcuts remain available.",
-    "Expanded deterministic logic tests and added a real main-scene test covering asset loading, UI construction, merging, rendering state, and salvage.",
-    "Validation passed: `npm test` and `npm run build` both exit 0, producing the complete Web export. Browser smoke could not run because this container lacks its configured Chromium binary; native main-scene validation covers runtime script failures.",
-    "Asset generation report — generate mode. [Buildings](/home/waynechi/dev/async-gamedev/game/assets/buildings-atlas.png): “Create sixteen commercial-quality fantasy settlement sprites in an exact ordered 4×4 isometric atlas.” [Terrain](/home/waynechi/dev/async-gamedev/game/assets/terrain-atlas.png): “Create an exact 2×2 atlas containing Meadow, magical Spring, rune Ruins, and Festival Plaza.” [Backdrop](/home/waynechi/dev/async-gamedev/game/assets/enchanted-valley.png): “Create a wide enchanted valley backdrop with waterfalls, ruins, mist, and a calm board-readable center.” A transparent-background edit was attempted but rejected because it baked a checkerboard; the accepted building atlas was mechanically alpha-keyed without altering its sprites."
+    "Drop Orchestra replaces Hexhaven with a kinetic 2D physics stage where falling balls play notes as they strike movable bumpers.",
+    "Timed concerts alternate with intermissions; the full instrument and goal arrangement persists between cycles and browser visits.",
+    "Buy and place C, D, E, G, and A bumpers during concerts, then drag or rotate them to conduct longer routes into the movable goal.",
+    "Per-ball bounce combos, visible risk variance, C–E–G sheet matching, score multipliers, spendable coins, and anti-loop cleanup form the first scoring economy.",
+    "Intermissions add permanent goal-size, emission-tempo, and bumper-energy upgrades plus two purchasable sheet-music patterns.",
+    "The website recorder, telemetry, autonomous worker prompt, browser smoke tests, and future iteration loop now target Drop Orchestra and its two source design documents."
   ],
-  "artifact_sha256": "1ac0dcc155b50379d7d8bba6e0c4e58b77700fb21b68fbb9d691aaa589cba45e"
+  "artifact_sha256": "cf50a38b8b41866073e5a982c6aaa7262b6ebe4f0d39b1a164fb51709b760186"
 }
