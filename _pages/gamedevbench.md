@@ -339,7 +339,7 @@ nav_order: 100
   }
   .gdb-bar-row {
     display: grid;
-    grid-template-columns: minmax(250px, 320px) minmax(240px, 1fr) 118px;
+    grid-template-columns: minmax(250px, 330px) minmax(240px, 1fr) 118px;
     align-items: center;
     gap: 14px;
     padding: 9px 0;
@@ -440,7 +440,7 @@ nav_order: 100
   }
   .gdb-axis {
     display: grid;
-    grid-template-columns: minmax(250px, 320px) minmax(240px, 1fr) 118px;
+    grid-template-columns: minmax(250px, 330px) minmax(240px, 1fr) 118px;
     gap: 14px;
     padding-top: 8px;
   }
@@ -610,6 +610,14 @@ nav_order: 100
   <h2 id="leaderboard">Leaderboard</h2>
   <div class="gdb-chart">
     <div class="gdb-bar-row new">
+      <div class="gdb-bar-label"><img class="logo" src="/assets/img/logos/anthropic.svg" alt="anthropic"><span class="gdb-model-name">claude-fable-5 (xhigh)</span><span class="harness">[Claude Code]</span><span class="gdb-new-badge">New</span></div>
+      <div class="gdb-bar-track">
+        <div class="gdb-bar-fill" style="width:67.3%;background:#d97757;"></div>
+        <div class="gdb-bar-err" style="left:62.2%;width:10.1%;"></div>
+      </div>
+      <div class="gdb-bar-score">67.3% <span class="ci">±5.0</span></div>
+    </div>
+    <div class="gdb-bar-row new">
       <div class="gdb-bar-label"><img class="logo" src="/assets/img/logos/openai.svg" alt="openai"><span class="gdb-model-name">gpt-5.6-sol (xhigh)</span><span class="harness">[Codex]</span><span class="gdb-new-badge">New</span></div>
       <div class="gdb-bar-track">
         <div class="gdb-bar-fill" style="width:63.7%;background:#10a37f;"></div>
@@ -664,14 +672,6 @@ nav_order: 100
         <div class="gdb-bar-err" style="left:46.6%;width:10.8%;"></div>
       </div>
       <div class="gdb-bar-score">52.0% <span class="ci">±5.4</span></div>
-    </div>
-    <div class="gdb-bar-row new">
-      <div class="gdb-bar-label"><img class="logo" src="/assets/img/logos/moonshot.svg" alt="moonshot"><span class="gdb-model-name">kimi-k3</span><span class="harness">[Kimi Code]</span><span class="gdb-new-badge">New</span></div>
-      <div class="gdb-bar-track">
-        <div class="gdb-bar-fill" style="width:50.8%;background:#cf3e3e;"></div>
-        <div class="gdb-bar-err" style="left:45.4%;width:10.7%;"></div>
-      </div>
-      <div class="gdb-bar-score">50.8% <span class="ci">±5.4</span></div>
     </div>
     <div class="gdb-bar-row">
       <div class="gdb-bar-label"><img class="logo" src="/assets/img/logos/gemini.svg" alt="gemini">gemini-3-flash-preview&nbsp;<span class="harness">[Gemini CLI]</span></div>
