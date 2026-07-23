@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "lifecycle": "deploying",
-  "lifecycle_detail": "Publishing v0012",
+  "lifecycle": "awaiting_feedback",
+  "lifecycle_detail": "Playable build verified",
   "current_version": "v0012",
   "game_url": "/assets/async-gamedev/releases/v0012/index.html",
-  "deployed_at": null,
+  "deployed_at": "2026-07-23T06:38:54.971Z",
   "release_notes": [
     "Drop Orchestra replaces Hexhaven with a kinetic 2D physics stage where falling balls play notes as they strike movable bumpers.",
     "Timed concerts alternate with intermissions; the full instrument and goal arrangement persists between cycles and browser visits.",
