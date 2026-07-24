@@ -1,17 +1,16 @@
 {
   "schema_version": 1,
-  "lifecycle": "developing",
-  "lifecycle_detail": "Resuming development from 1 queued feedback session",
-  "current_version": "v0012",
-  "game_url": "/assets/async-gamedev/releases/v0012/index.html",
-  "deployed_at": "2026-07-23T06:38:54.971Z",
+  "lifecycle": "deploying",
+  "lifecycle_detail": "Publishing v0013",
+  "current_version": "v0013",
+  "game_url": "/assets/async-gamedev/releases/v0013/index.html",
+  "deployed_at": null,
   "release_notes": [
-    "Drop Orchestra replaces Hexhaven with a kinetic 2D physics stage where falling balls play notes as they strike movable bumpers.",
-    "Timed concerts alternate with intermissions; the full instrument and goal arrangement persists between cycles and browser visits.",
-    "Buy and place C, D, E, G, and A bumpers during concerts, then drag or rotate them to conduct longer routes into the movable goal.",
-    "Per-ball bounce combos, visible risk variance, C–E–G sheet matching, score multipliers, spendable coins, and anti-loop cleanup form the first scoring economy.",
-    "Intermissions add permanent goal-size, emission-tempo, and bumper-energy upgrades plus two purchasable sheet-music patterns.",
-    "The website recorder, telemetry, autonomous worker prompt, browser smoke tests, and future iteration loop now target Drop Orchestra and its two source design documents."
+    "Added an atomic JSON-backed runtime-store fallback when the native SQLite binding is unavailable, while retaining SQLite as the preferred backend.",
+    "Added fallback persistence, multi-instance queue claiming, and recovery-to-SQLite support.",
+    "Added automated coverage for fallback durability and queue behavior.",
+    "Preserved the new first-person 3D stage, perspective-aware controls, fullscreen button and shortcuts, improved ball trails, catcher rail, and telemetry fixes.",
+    "Validated all orchestrator, game-logic, and main-scene tests successfully."
   ],
-  "artifact_sha256": "cf50a38b8b41866073e5a982c6aaa7262b6ebe4f0d39b1a164fb51709b760186"
+  "artifact_sha256": "9e747928c41d80cd9c91b4f06539f961c11ce544f9e4870fb2c72986c42e53d8"
 }
