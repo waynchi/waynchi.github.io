@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "lifecycle": "deploying",
-  "lifecycle_detail": "Publishing v0013",
+  "lifecycle": "awaiting_feedback",
+  "lifecycle_detail": "Playable build verified",
   "current_version": "v0013",
   "game_url": "/assets/async-gamedev/releases/v0013/index.html",
-  "deployed_at": null,
+  "deployed_at": "2026-07-24T23:24:05.127Z",
   "release_notes": [
     "Added an atomic JSON-backed runtime-store fallback when the native SQLite binding is unavailable, while retaining SQLite as the preferred backend.",
     "Added fallback persistence, multi-instance queue claiming, and recovery-to-SQLite support.",
