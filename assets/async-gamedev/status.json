@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "lifecycle": "developing",
-  "lifecycle_detail": "Feedback received; developing the next release from 1 session",
+  "lifecycle": "retrying",
+  "lifecycle_detail": "Iteration attempt failed. Automatically retrying at Jul 24, 2026, 23:18 UTC: npm test exited 1\n",
   "current_version": "v0012",
   "game_url": "/assets/async-gamedev/releases/v0012/index.html",
   "deployed_at": "2026-07-23T06:38:54.971Z",
