@@ -1,19 +1,19 @@
 {
   "schema_version": 1,
-  "lifecycle": "developing",
-  "lifecycle_detail": "Feedback received; developing the next release from 1 session",
-  "current_version": "v0014",
-  "game_url": "/assets/async-gamedev/releases/v0014/index.html",
-  "deployed_at": "2026-07-25T02:09:17.653Z",
+  "lifecycle": "deploying",
+  "lifecycle_detail": "Publishing v0015",
+  "current_version": "v0015",
+  "game_url": "/assets/async-gamedev/releases/v0015/index.html",
+  "deployed_at": null,
   "release_notes": [
-    "Replaced the elevated tabletop and sidebar with a full-canvas 3D first-person workshop.",
-    "Added WASD movement, mouse look, sprinting, jumping, pointer capture, and F-key fullscreen.",
-    "Balls now drop vertically from an overhead pipe into a physical floor arena.",
-    "The floor well and platforms can be picked up, moved, placed, and rotated directly in-world.",
-    "Added a physical workshop for buying platforms, upgrades, sheet music, and controlling concerts.",
-    "Expanded scene tests to cover walking, overhead spawning, direct well manipulation, platform purchasing/placement, the workshop, fullscreen support, and sidebar removal.",
-    "Updated browser smoke coverage for first-person input, fullscreen telemetry, ball emission, and recording.",
-    "`npm test` and `npm run build` both exit successfully; the web export was generated. Local browser smoke execution was unavailable because the sandbox prohibits opening a localhost socket (`EPERM`)."
+    "Balls now leave the central overhead pipe with zero horizontal velocity and fall directly onto the starter E trampoline.",
+    "Trampolines are flat and apply a strictly upward impulse; bare-floor contact stops balls instead of rolling or rebounding.",
+    "Added a visible vertical drop guide and repositioned the pipe over the central play area.",
+    "Brightened floors, walls, workshop fixtures, and equipment using mobile Compatibility-safe lighting and materials.",
+    "Added mobile controls: left drag walks, right drag looks, right tap interacts, and double tap toggles fullscreen.",
+    "Expanded tests to verify flat geometry, readable materials, direct vertical drops, zero-horizontal trampoline launches, dead-stop floor contact, registered musical hits, and touch controls.",
+    "Updated browser smoke validation to require an actual trampoline-hit event instead of accepting emission alone.",
+    "`npm test` and `npm run build` both pass, and the web export is complete. Local browser smoke launch remains unavailable because the workspace blocks localhost socket creation with `EPERM`."
   ],
-  "artifact_sha256": "4eb48a9c62feb03e73cbac63e912b68bc19e6a1103d4e50cf5ffb99872b060c2"
+  "artifact_sha256": "4725d451675e8673e36c03025fe5178c298f336dbb58b72ef15d5ad6434a852b"
 }
