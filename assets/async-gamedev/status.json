@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "lifecycle": "deploying",
-  "lifecycle_detail": "Publishing v0014",
+  "lifecycle": "awaiting_feedback",
+  "lifecycle_detail": "Playable build verified",
   "current_version": "v0014",
   "game_url": "/assets/async-gamedev/releases/v0014/index.html",
-  "deployed_at": null,
+  "deployed_at": "2026-07-25T02:09:17.653Z",
   "release_notes": [
     "Replaced the elevated tabletop and sidebar with a full-canvas 3D first-person workshop.",
     "Added WASD movement, mouse look, sprinting, jumping, pointer capture, and F-key fullscreen.",
