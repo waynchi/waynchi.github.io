@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "lifecycle": "deploying",
-  "lifecycle_detail": "Publishing v0015",
+  "lifecycle": "awaiting_feedback",
+  "lifecycle_detail": "Playable build verified",
   "current_version": "v0015",
   "game_url": "/assets/async-gamedev/releases/v0015/index.html",
-  "deployed_at": null,
+  "deployed_at": "2026-07-25T23:47:56.903Z",
   "release_notes": [
     "Balls now leave the central overhead pipe with zero horizontal velocity and fall directly onto the starter E trampoline.",
     "Trampolines are flat and apply a strictly upward impulse; bare-floor contact stops balls instead of rolling or rebounding.",
