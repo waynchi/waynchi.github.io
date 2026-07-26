@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "lifecycle": "deploying",
-  "lifecycle_detail": "Publishing v0016",
+  "lifecycle": "awaiting_feedback",
+  "lifecycle_detail": "Playable build verified",
   "current_version": "v0016",
   "game_url": "/assets/async-gamedev/releases/v0016/index.html",
-  "deployed_at": null,
+  "deployed_at": "2026-07-26T01:22:17.403Z",
   "release_notes": [
     "Expanded the arena from 17×17 to 30×28 with faster movement, longer build reach, and a less crowded physical workshop.",
     "Added persisted trampoline aim and tilt. R aims; Q or the mouse wheel adjusts angle. Pads show their angle and a live trajectory preview.",
