@@ -38,6 +38,11 @@ nav: false
   .agd-dot { width:9px; height:9px; border-radius:50%; background:#7f8c91; }
   .agd-dot.live { background:#db665e; box-shadow:0 0 0 5px rgba(219,102,94,.15); animation:agd-pulse 1.5s infinite; }
   .agd-release { margin:0; padding-left:18px; color:var(--muted); font-size:.9rem; }
+  .agd-direction { margin-top:18px; padding-top:16px; border-top:1px solid color-mix(in srgb,var(--ink) 16%,transparent); }
+  .agd-direction h3 { margin:0 0 7px; font-size:.78rem; text-transform:uppercase; letter-spacing:.08em; color:var(--gold); }
+  .agd-direction p,.agd-direction li { color:var(--muted); font-size:.82rem; line-height:1.45; }
+  .agd-direction p { margin:0 0 8px; }
+  .agd-direction ul { margin:0; padding-left:18px; }
   .agd-receipt { margin-top:10px; color:#528d70; font-size:.88rem; }
   @keyframes agd-pulse { 50% { opacity:.45; } }
   @media(max-width:760px){ .agd-hero{display:block}.agd-status{margin-top:16px}.agd-feedback{grid-template-columns:1fr}.agd-stage{aspect-ratio:4/5}.agd-field{display:block}.agd-field button{width:100%;margin-top:8px} }
@@ -86,8 +91,17 @@ nav: false
       <div id="agd-receipt" class="agd-receipt"></div>
     </div>
     <aside class="agd-card">
-      <h2>Latest release</h2>
+      <h2>Latest releases</h2>
       <ul id="agd-release-notes" class="agd-release"><li>Loading release notes…</li></ul>
+      <div class="agd-direction">
+        <h3>Incremental direction — discussion only</h3>
+        <p>This build deliberately does not add progression systems. A future incremental layer should deepen the dropping-and-keys loop instead of adding another mid-concert meter.</p>
+        <ul>
+          <li>Earn one clear resource from successful drops, then spend it between concerts on drop cadence, key capacity, and response-range tuning.</li>
+          <li>Use milestone unlocks for new key behaviors and larger venue layouts, so each unlock changes arrangement strategy rather than only increasing a number.</li>
+          <li>Only after that loop is fun, test a “new tour” prestige reset that trades the current floor for a small permanent acoustics bonus. Offline earnings should wait until active play is worth returning to.</li>
+        </ul>
+      </div>
     </aside>
   </section>
 </div>
