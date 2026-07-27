@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "lifecycle": "deploying",
-  "lifecycle_detail": "Publishing v0017",
+  "lifecycle": "awaiting_feedback",
+  "lifecycle_detail": "Playable build verified",
   "current_version": "v0017",
   "game_url": "/assets/async-gamedev/releases/v0017/index.html",
-  "deployed_at": null,
+  "deployed_at": "2026-07-27T01:40:36.689Z",
   "release_notes": [
     "Added audience hype, catch streaks, score multipliers, miss penalties, and six-ball double-score encores.",
     "Added spotlight balls every fifth drop for higher-risk, higher-value moments.",
