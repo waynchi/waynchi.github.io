@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "lifecycle": "awaiting_feedback",
-  "lifecycle_detail": "Playable build verified",
+  "lifecycle": "developing",
+  "lifecycle_detail": "Feedback received; developing the next release from 1 session",
   "current_version": "v0016",
   "game_url": "/assets/async-gamedev/releases/v0016/index.html",
   "deployed_at": "2026-07-26T01:22:17.403Z",
