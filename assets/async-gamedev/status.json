@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "lifecycle": "deploying",
-  "lifecycle_detail": "Publishing v0019",
+  "lifecycle": "awaiting_feedback",
+  "lifecycle_detail": "Playable build verified",
   "current_version": "v0019",
   "game_url": "/assets/async-gamedev/releases/v0019/index.html",
-  "deployed_at": null,
+  "deployed_at": "2026-07-27T23:55:30.021Z",
   "release_notes": [
     "Every purchased key now rolls a random direction and arc once, then keeps them permanently across placement, concerts, and saves.",
     "Auto-aim and per-hit randomness are removed: each key launches every ball along the same predictable path.",
