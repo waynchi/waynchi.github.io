@@ -1,18 +1,16 @@
 {
   "schema_version": 1,
-  "lifecycle": "developing",
-  "lifecycle_detail": "Feedback received; developing the next release from 1 session",
-  "current_version": "v0018",
-  "game_url": "/assets/async-gamedev/releases/v0018/index.html",
-  "deployed_at": "2026-07-27T18:56:23.426Z",
+  "lifecycle": "deploying",
+  "lifecycle_detail": "Publishing v0019",
+  "current_version": "v0019",
+  "game_url": "/assets/async-gamedev/releases/v0019/index.html",
+  "deployed_at": null,
   "release_notes": [
-    "Replaced the workshop product wall with one physical terminal that opens a centered key catalog.",
-    "Made every key mechanically distinct: C Loft, D Drift, E Relay, G Glide, and A Burst each have unique lift, travel, variance, and scoring risk.",
-    "Removed player-adjustable key angles. Keys remain flat and sample deterministic random response cones on every hit.",
-    "Retired active spotlight, hype, streak, encore, and concert-rating multipliers to keep scoring focused on rebounds and musical routes.",
-    "Migrated existing arrangements safely to the fixed-key layout while preserving snapshot compatibility.",
-    "Added an explicitly unimplemented incremental-progression proposal beneath Latest Releases.",
-    "Passed the complete `npm test` suite and generated the production web export with `npm run build`."
+    "Every purchased key now rolls a random direction and arc once, then keeps them permanently across placement, concerts, and saves.",
+    "Auto-aim and per-hit randomness are removed: each key launches every ball along the same predictable path.",
+    "Keys now visibly lean, display their fixed angles, and show a trajectory preview while being moved so players can connect pipelines.",
+    "Existing layouts migrate safely to the new layout format with a working C→E→G starter pipeline.",
+    "Updated the Latest Releases progression discussion to build on fixed-angle pipeline strategy without implementing new progression systems."
   ],
-  "artifact_sha256": "287e5e447dcd604fe0e929ad9850948cd171600d00f0d61610ca31355e51c847"
+  "artifact_sha256": "6a1fe7e890053d9642f8ebdc7881f95d55c979b26ae1c84d909e6b8c53240d88"
 }
