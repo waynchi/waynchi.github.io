@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "lifecycle": "deploying",
-  "lifecycle_detail": "Publishing v0020",
+  "lifecycle": "awaiting_feedback",
+  "lifecycle_detail": "Playable build verified",
   "current_version": "v0020",
   "game_url": "/assets/async-gamedev/releases/v0020/index.html",
-  "deployed_at": null,
+  "deployed_at": "2026-07-28T02:32:24.830Z",
   "release_notes": [
     "Pick up or purchase a key, then use R, the mouse wheel, or right-click to rotate it; touch players can double-tap. The trajectory preview updates immediately.",
     "Key incline and launch distance remain fixed. Labels and prompts now clearly distinguish adjustable DIR from fixed ARC.",
