@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /async-gamedev/
-title: Drop Orchestra — Async Game Development
+title: Chroma Drift — Async Game Development
 nav: false
 ---
 
@@ -38,11 +38,6 @@ nav: false
   .agd-dot { width:9px; height:9px; border-radius:50%; background:#7f8c91; }
   .agd-dot.live { background:#db665e; box-shadow:0 0 0 5px rgba(219,102,94,.15); animation:agd-pulse 1.5s infinite; }
   .agd-release { margin:0; padding-left:18px; color:var(--muted); font-size:.9rem; }
-  .agd-direction { margin-top:18px; padding-top:16px; border-top:1px solid color-mix(in srgb,var(--ink) 16%,transparent); }
-  .agd-direction h3 { margin:0 0 7px; font-size:.78rem; text-transform:uppercase; letter-spacing:.08em; color:var(--gold); }
-  .agd-direction p,.agd-direction li { color:var(--muted); font-size:.82rem; line-height:1.45; }
-  .agd-direction p { margin:0 0 8px; }
-  .agd-direction ul { margin:0; padding-left:18px; }
   .agd-receipt { margin-top:10px; color:#528d70; font-size:.88rem; }
   @keyframes agd-pulse { 50% { opacity:.45; } }
   @media(max-width:760px){ .agd-hero{display:block}.agd-status{margin-top:16px}.agd-feedback{grid-template-columns:1fr}.agd-stage{aspect-ratio:4/5}.agd-field{display:block}.agd-field button{width:100%;margin-top:8px} }
@@ -52,8 +47,8 @@ nav: false
   <section class="agd-hero">
     <div>
       <div class="agd-kicker">A game made in conversation</div>
-      <h1>Drop Orchestra</h1>
-      <p>Build a kinetic orchestra: place pitched bumpers, conduct falling balls with gravity, and route longer melodies into the goal. Your recorded play session becomes the brief for the next release.</p>
+      <h1>Chroma Drift</h1>
+      <p>A two-touch side-scrolling bullet hell. Tap left to invert gravity, tap right to cycle red → green → blue. Matching bullets hurt; matching auto-fire destroys. Your recorded run becomes the brief for the next release.</p>
     </div>
     <div class="agd-status" aria-live="polite">
       <div class="agd-status-row"><span>Agent</span><span id="agd-lifecycle" class="agd-status-value">Loading</span></div>
@@ -64,7 +59,7 @@ nav: false
   </section>
 
   <section class="agd-stage">
-    <iframe id="agd-game" title="Drop Orchestra game" allow="autoplay; fullscreen" allowfullscreen loading="eager"></iframe>
+    <iframe id="agd-game" title="Chroma Drift game" allow="autoplay; fullscreen" allowfullscreen loading="eager"></iframe>
     <div id="agd-lock" class="agd-lock">
       <div class="agd-lock-card">
         <div class="agd-kicker">Private testing controls</div>
@@ -91,17 +86,8 @@ nav: false
       <div id="agd-receipt" class="agd-receipt"></div>
     </div>
     <aside class="agd-card">
-      <h2>Latest releases</h2>
+      <h2>Latest release</h2>
       <ul id="agd-release-notes" class="agd-release"><li>Loading release notes…</li></ul>
-      <div class="agd-direction">
-        <h3>Incremental direction — discussion only</h3>
-        <p>This build deliberately does not add progression systems. A future incremental layer should deepen the dropping-and-keys loop instead of adding another mid-concert meter.</p>
-        <ul>
-          <li>Earn one clear resource from completed pipelines, then spend it between concerts on drop cadence, key capacity, and a wider choice of fixed-arc keys in the shop.</li>
-          <li>Use milestone unlocks for new fixed-arc key behaviors and larger venue layouts, so each unlock changes pipeline strategy rather than only increasing a number.</li>
-          <li>Only after that loop is fun, test a “new tour” prestige reset that trades the current floor for a small permanent acoustics bonus. Offline earnings should wait until active play is worth returning to.</li>
-        </ul>
-      </div>
     </aside>
   </section>
 </div>
@@ -111,14 +97,14 @@ nav: false
   'use strict';
   const API_BASE = 'https://bass.cs.cmu.edu';
   const STATUS_URL = '/assets/async-gamedev/status.json';
-  const DB_NAME = 'drop-orchestra-recordings-v1';
+  const DB_NAME = 'chroma-drift-recordings-v1';
   const MAX_VIDEO_BYTES = 2 * 1024 * 1024 * 1024;
   const els = Object.fromEntries([
     'lifecycle','version','published','detail','game','lock','password','unlock','auth-error','notes','submit','dot','recording-label','submit-error','receipt','release-notes'
   ].map(name => [name.replace(/-([a-z])/g, (_, letter) => letter.toUpperCase()), document.getElementById(`agd-${name}`)]));
 
   let status = null;
-  let token = sessionStorage.getItem('drop-orchestra-feedback-token');
+  let token = sessionStorage.getItem('chroma-drift-feedback-token');
   let sessionId = null;
   let sessionStartedAt = null;
   let recorder = null;
@@ -142,7 +128,7 @@ nav: false
       els.published.textContent = status.deployed_at ? new Date(status.deployed_at).toLocaleString() : '—';
       els.detail.textContent = status.lifecycle_detail || 'Worker status is available.';
       els.releaseNotes.innerHTML = '';
-      for (const note of status.release_notes || ['The first Drop Orchestra concert is ready.']) {
+      for (const note of status.release_notes || ['The first Chroma Drift run is ready.']) {
         const li = document.createElement('li'); li.textContent = note; els.releaseNotes.appendChild(li);
       }
       if (!els.game.src && status.game_url) els.game.src = status.game_url;
@@ -209,7 +195,7 @@ nav: false
       if (!response.ok) throw new Error(response.status === 401 ? 'Incorrect passphrase.' : `API returned ${response.status}.`);
       const body = await response.json();
       token = body.token;
-      sessionStorage.setItem('drop-orchestra-feedback-token', token);
+      sessionStorage.setItem('chroma-drift-feedback-token', token);
       sessionId = crypto.randomUUID();
       sessionStartedAt = new Date().toISOString();
       actions = [];
@@ -294,11 +280,11 @@ nav: false
   }
 
   window.addEventListener('message', event => {
-    if (event.origin !== window.location.origin || !event.data || event.data.source !== 'drop_orchestra') return;
+    if (event.origin !== window.location.origin || !event.data || event.data.source !== 'chroma_drift') return;
     const gameEvent = event.data.event;
     actions.push(gameEvent);
     if (gameEvent && gameEvent.data && gameEvent.data.snapshot) latestSnapshot = gameEvent.data.snapshot;
-    else if (gameEvent && ['session_started','concert_completed'].includes(gameEvent.type)) latestSnapshot = gameEvent.data.snapshot || gameEvent.data;
+    else if (gameEvent && ['session_ready','session_started','run_completed'].includes(gameEvent.type)) latestSnapshot = gameEvent.data.snapshot || gameEvent.data;
   });
 
   els.unlock.addEventListener('click', authenticate);
