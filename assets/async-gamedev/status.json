@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "lifecycle": "deploying",
-  "lifecycle_detail": "Publishing v0023",
+  "lifecycle": "awaiting_feedback",
+  "lifecycle_detail": "Playable build verified",
   "current_version": "v0023",
   "game_url": "/assets/async-gamedev/releases/v0023/index.html",
-  "deployed_at": null,
+  "deployed_at": "2026-07-29T07:37:37.674Z",
   "release_notes": [
     "The responsive 16:10 playfield now fills the website stage without clipping or letterboxing, including narrow-screen embeds.",
     "Tap the left half to invert gravity; tap the right half to cycle red → green → blue. Keyboard mirrors are included for desktop play.",
