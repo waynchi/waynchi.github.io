@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "lifecycle": "deploying",
-  "lifecycle_detail": "Publishing v0024",
+  "lifecycle": "awaiting_feedback",
+  "lifecycle_detail": "Playable build verified",
   "current_version": "v0024",
   "game_url": "/assets/async-gamedev/releases/v0024/index.html",
-  "deployed_at": null,
+  "deployed_at": "2026-07-29T19:21:42.269Z",
   "release_notes": [
     "Added a two-frame runner with gravity-flip orientation, jet trails, chroma tinting, afterimages, and a visible compact hit core.",
     "Added deterministic Shift Break rules, effects, scoring, telemetry, tutorials, and tests. Matching bullets outside the break radius remain dangerous; off-color phasing and matching auto-fire are unchanged.",
