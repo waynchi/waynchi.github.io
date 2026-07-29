@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
-  "lifecycle": "awaiting_feedback",
-  "lifecycle_detail": "Playable build verified",
-  "current_version": "v0022",
-  "game_url": "/assets/async-gamedev/releases/v0022/index.html",
-  "deployed_at": "2026-07-29T07:31:50.760Z",
+  "lifecycle": "deploying",
+  "lifecycle_detail": "Publishing v0023",
+  "current_version": "v0023",
+  "game_url": "/assets/async-gamedev/releases/v0023/index.html",
+  "deployed_at": null,
   "release_notes": [
-    "The full 1152×720 playfield now scales cleanly inside the website and on narrow screens, keeping the HUD and both touch zones visible.",
+    "The responsive 16:10 playfield now fills the website stage without clipping or letterboxing, including narrow-screen embeds.",
     "Tap the left half to invert gravity; tap the right half to cycle red → green → blue. Keyboard mirrors are included for desktop play.",
     "Matching enemy bullets damage your three-point hull, off-color bullets phase harmlessly for graze bonuses, and automatic shots only damage matching enemies.",
     "Fifteen color-authored enemy variants attack with escalating aimed and fan patterns, capped by a recurring multi-phase Chroma Warden boss.",
