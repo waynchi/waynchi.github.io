@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "lifecycle": "deploying",
-  "lifecycle_detail": "Publishing v0025",
+  "lifecycle": "awaiting_feedback",
+  "lifecycle_detail": "Playable build verified",
   "current_version": "v0025",
   "game_url": "/assets/async-gamedev/releases/v0025/index.html",
-  "deployed_at": null,
+  "deployed_at": "2026-07-29T23:31:00.867Z",
   "release_notes": [
     "Added deterministic line, chevron, gate, stair, and diamond formations that cycle red → green → blue with clear HUD telegraphs and formation links.",
     "Enemy fire deliberately contrasts with its formation color. Shifting performs a full-field Spectrum Sweep, suppresses obsolete emitters, and grants a 0.9-second transition guard; matching bullets remain dangerous afterward.",
