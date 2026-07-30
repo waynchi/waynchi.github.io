@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "lifecycle": "deploying",
-  "lifecycle_detail": "Publishing v0027",
+  "lifecycle": "awaiting_feedback",
+  "lifecycle_detail": "Playable build verified",
   "current_version": "v0027",
   "game_url": "/assets/async-gamedev/releases/v0027/index.html",
-  "deployed_at": null,
+  "deployed_at": "2026-07-30T19:42:32.707Z",
   "release_notes": [
     "Formations begin visibly offset, then a gravity flip locks and banks them onto the projected firing path.",
     "Added a visible trajectory rail, lock pulses, dashed approach guides, sync rings, cues, scoring, and impact feedback.",
