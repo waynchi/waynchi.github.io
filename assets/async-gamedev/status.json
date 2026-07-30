@@ -1,18 +1,18 @@
 {
   "schema_version": 1,
-  "lifecycle": "developing",
-  "lifecycle_detail": "Feedback received; developing the next release from 1 session",
-  "current_version": "v0026",
-  "game_url": "/assets/async-gamedev/releases/v0026/index.html",
-  "deployed_at": "2026-07-30T19:19:45.759Z",
+  "lifecycle": "deploying",
+  "lifecycle_detail": "Publishing v0027",
+  "current_version": "v0027",
+  "game_url": "/assets/async-gamedev/releases/v0027/index.html",
+  "deployed_at": null,
   "release_notes": [
-    "Removed active three-color cycling. Left remains gravity flip; right now triggers a cooldown-based impact surge that accelerates the run, deflects nearby bullets, and enables contact kills.",
-    "Added climb, slalom, dive, scissor, and swoop formations with banking, vertical velocity, acceleration, and distinct cues.",
-    "Added a guaranteed opening climb designed for one upward flip to produce a sequential auto-fire kill chain; the scene test verifies at least three arc kills.",
-    "Strengthened impact with hit-stop, rings, particles, trails, camera shake, audio response, faster surge fire, and asymmetric gravity acceleration.",
-    "Retained additive telemetry compatibility fields and added surge, deflection, formation-motion, and arc-chain metrics.",
-    "Updated game, scene, integration, design, and web copy tests.",
-    "Validation passed: `npm test`, `npm run build`, `node --check scripts/smoke-web.mjs`, and `git diff --check`. Browser smoke rebuilt successfully but could not launch its local server because the sandbox blocks localhost binding (`listen EPERM`)."
+    "Formations begin visibly offset, then a gravity flip locks and banks them onto the projected firing path.",
+    "Added a visible trajectory rail, lock pulses, dashed approach guides, sync rings, cues, scoring, and impact feedback.",
+    "Rebuilt the five encounter families as echo arc, dive, cross, sprint, and hunt patterns with distinct spacing and acceleration.",
+    "Direct runtime playtest improved from 11 kills and a maximum chain of two to 21 kills, every formation cleared, all lives retained, and a six-kill chain using one flip per cue.",
+    "Added `formation_synced`, `sync_kills`, and `max_sync_chain` telemetry while retaining previous compatibility fields.",
+    "Added sustained trajectory-error assertions and a multi-formation real-runtime playtest that rejects input-mashing-dependent behavior.",
+    "Validation passed: `npm test`, `npm run build`, and `git diff --check`."
   ],
-  "artifact_sha256": "eb5984902cb405a73256a779f8ec98b773d4e3ac8bff97b001b9b6f4ce2f0898"
+  "artifact_sha256": "a4a17a25e4fd1a89988872e91be62c005fceaa10c948684782f3eb14b0884abc"
 }
