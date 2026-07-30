@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "lifecycle": "deploying",
-  "lifecycle_detail": "Publishing v0026",
+  "lifecycle": "awaiting_feedback",
+  "lifecycle_detail": "Playable build verified",
   "current_version": "v0026",
   "game_url": "/assets/async-gamedev/releases/v0026/index.html",
-  "deployed_at": null,
+  "deployed_at": "2026-07-30T19:19:45.759Z",
   "release_notes": [
     "Removed active three-color cycling. Left remains gravity flip; right now triggers a cooldown-based impact surge that accelerates the run, deflects nearby bullets, and enables contact kills.",
     "Added climb, slalom, dive, scissor, and swoop formations with banking, vertical velocity, acceleration, and distinct cues.",
