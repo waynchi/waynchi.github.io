@@ -1,18 +1,16 @@
 {
   "schema_version": 1,
-  "lifecycle": "developing",
-  "lifecycle_detail": "Feedback received; developing the next release from 1 session",
-  "current_version": "v0027",
-  "game_url": "/assets/async-gamedev/releases/v0027/index.html",
-  "deployed_at": "2026-07-30T19:42:32.707Z",
+  "lifecycle": "deploying",
+  "lifecycle_detail": "Publishing v0028",
+  "current_version": "v0028",
+  "game_url": "/assets/async-gamedev/releases/v0028/index.html",
+  "deployed_at": null,
   "release_notes": [
-    "Formations begin visibly offset, then a gravity flip locks and banks them onto the projected firing path.",
-    "Added a visible trajectory rail, lock pulses, dashed approach guides, sync rings, cues, scoring, and impact feedback.",
-    "Rebuilt the five encounter families as echo arc, dive, cross, sprint, and hunt patterns with distinct spacing and acceleration.",
-    "Direct runtime playtest improved from 11 kills and a maximum chain of two to 21 kills, every formation cleared, all lives retained, and a six-kill chain using one flip per cue.",
-    "Added `formation_synced`, `sync_kills`, and `max_sync_chain` telemetry while retaining previous compatibility fields.",
-    "Added sustained trajectory-error assertions and a multi-formation real-runtime playtest that rejects input-mashing-dependent behavior.",
-    "Validation passed: `npm test`, `npm run build`, and `git diff --check`."
+    "Added five deterministic formations: sine train, pincer, rotating orbit, dive chain, and double helix.",
+    "Added choreographed lane fans, crossing bursts, rings, aimed pairs, spirals, pre-fire tells, motion trails, and pattern-chain scoring.",
+    "Gravity now affects only the runner; legacy synchronization telemetry remains compatible but inert.",
+    "Live simulation result: 23.8 seconds, seven formations, all five patterns, 36 kills, ×6 chain, two lives remaining, and 436 px vertical spread.",
+    "`npm test` passes and the production web export builds successfully."
   ],
-  "artifact_sha256": "a4a17a25e4fd1a89988872e91be62c005fceaa10c948684782f3eb14b0884abc"
+  "artifact_sha256": "11d26ccf57f3297b59d669d887ea90a6c96004c35074080b99e0dbbcb6fb3c31"
 }
