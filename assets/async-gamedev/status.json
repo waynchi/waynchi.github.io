@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "lifecycle": "deploying",
-  "lifecycle_detail": "Publishing v0028",
+  "lifecycle": "awaiting_feedback",
+  "lifecycle_detail": "Playable build verified",
   "current_version": "v0028",
   "game_url": "/assets/async-gamedev/releases/v0028/index.html",
-  "deployed_at": null,
+  "deployed_at": "2026-07-31T04:39:59.264Z",
   "release_notes": [
     "Added five deterministic formations: sine train, pincer, rotating orbit, dive chain, and double helix.",
     "Added choreographed lane fans, crossing bursts, rings, aimed pairs, spirals, pre-fire tells, motion trails, and pattern-chain scoring.",
