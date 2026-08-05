@@ -641,6 +641,14 @@ nav_order: 100
       </div>
       <div class="gdb-bar-score">58.6% <span class="ci">±5.3</span></div>
     </div>
+    <div class="gdb-bar-row new">
+      <div class="gdb-bar-label"><img class="logo" src="/assets/img/logos/moonshot.svg" alt="moonshot"><span class="gdb-model-name">kimi-k3</span><span class="harness">[Kimi Code]</span><span class="gdb-new-badge">New</span></div>
+      <div class="gdb-bar-track">
+        <div class="gdb-bar-fill" style="width:58.0%;background:#cf3e3e;"></div>
+        <div class="gdb-bar-err" style="left:52.7%;width:10.6%;"></div>
+      </div>
+      <div class="gdb-bar-score">58.0% <span class="ci">±5.3</span></div>
+    </div>
     <div class="gdb-bar-row">
       <div class="gdb-bar-label"><img class="logo" src="/assets/img/logos/anthropic.svg" alt="anthropic"><span class="gdb-model-name">claude-opus-4-8</span><span class="harness">[Claude Code]</span></div>
       <div class="gdb-bar-track">
