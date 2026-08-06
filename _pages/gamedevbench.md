@@ -641,7 +641,7 @@ nav_order: 100
       <div class="gdb-bar-score">63.1% <span class="ci">±5.2</span></div>
     </div>
     <div class="gdb-bar-row new">
-      <div class="gdb-bar-label"><span class="gdb-rank">4</span><img class="logo" src="/assets/img/logos/meta.svg" alt="meta"><span class="gdb-model-name">muse-spark-1.2 [high]</span><span class="harness">[Muse Code]</span><span class="gdb-new-badge">New</span></div>
+      <div class="gdb-bar-label"><span class="gdb-rank">3</span><img class="logo" src="/assets/img/logos/meta.svg" alt="meta"><span class="gdb-model-name">muse-spark-1.2 [high]</span><span class="harness">[Muse Code]</span><span class="gdb-new-badge">New</span></div>
       <div class="gdb-bar-track">
         <div class="gdb-bar-fill" style="width:63.1%;background:#0668e1;"></div>
         <div class="gdb-bar-err" style="left:57.9%;width:10.4%;"></div>
