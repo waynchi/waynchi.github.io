@@ -609,24 +609,24 @@ nav_order: 100
 <div class="gdb-section gdb-leaderboard-section">
   <h2 id="leaderboard">Leaderboard</h2>
   <div class="gdb-chart">
-    <div class="gdb-bar-row new">
-      <div class="gdb-bar-label"><img class="logo" src="/assets/img/logos/anthropic.svg" alt="anthropic"><span class="gdb-model-name">claude-fable-5 (xhigh)</span><span class="harness">[Claude Code]</span><span class="gdb-new-badge">New</span></div>
+    <div class="gdb-bar-row">
+      <div class="gdb-bar-label"><img class="logo" src="/assets/img/logos/anthropic.svg" alt="anthropic"><span class="gdb-model-name">claude-fable-5 (xhigh)</span><span class="harness">[Claude Code]</span></div>
       <div class="gdb-bar-track">
         <div class="gdb-bar-fill" style="width:67.3%;background:#d97757;"></div>
         <div class="gdb-bar-err" style="left:62.2%;width:10.1%;"></div>
       </div>
       <div class="gdb-bar-score">67.3% <span class="ci">±5.0</span></div>
     </div>
-    <div class="gdb-bar-row new">
-      <div class="gdb-bar-label"><img class="logo" src="/assets/img/logos/openai.svg" alt="openai"><span class="gdb-model-name">gpt-5.6-sol (xhigh)</span><span class="harness">[Codex]</span><span class="gdb-new-badge">New</span></div>
+    <div class="gdb-bar-row">
+      <div class="gdb-bar-label"><img class="logo" src="/assets/img/logos/openai.svg" alt="openai"><span class="gdb-model-name">gpt-5.6-sol (xhigh)</span><span class="harness">[Codex]</span></div>
       <div class="gdb-bar-track">
         <div class="gdb-bar-fill" style="width:63.7%;background:#10a37f;"></div>
         <div class="gdb-bar-err" style="left:58.5%;width:10.3%;"></div>
       </div>
       <div class="gdb-bar-score">63.7% <span class="ci">±5.2</span></div>
     </div>
-    <div class="gdb-bar-row new">
-      <div class="gdb-bar-label"><img class="logo" src="/assets/img/logos/openai.svg" alt="openai"><span class="gdb-model-name">gpt-5.6-sol (high)</span><span class="harness">[Codex]</span><span class="gdb-new-badge">New</span></div>
+    <div class="gdb-bar-row">
+      <div class="gdb-bar-label"><img class="logo" src="/assets/img/logos/openai.svg" alt="openai"><span class="gdb-model-name">gpt-5.6-sol (high)</span><span class="harness">[Codex]</span></div>
       <div class="gdb-bar-track">
         <div class="gdb-bar-fill" style="width:63.1%;background:#10a37f;"></div>
         <div class="gdb-bar-err" style="left:57.9%;width:10.4%;"></div>
@@ -634,15 +634,23 @@ nav_order: 100
       <div class="gdb-bar-score">63.1% <span class="ci">±5.2</span></div>
     </div>
     <div class="gdb-bar-row new">
-      <div class="gdb-bar-label"><img class="logo" src="/assets/img/logos/openai.svg" alt="openai"><span class="gdb-model-name">gpt-5.6-sol (medium)</span><span class="harness">[Codex]</span><span class="gdb-new-badge">New</span></div>
+      <div class="gdb-bar-label"><img class="logo" src="/assets/img/logos/meta.svg" alt="meta"><span class="gdb-model-name">muse-spark-1.2</span><span class="harness">[Muse Code]</span><span class="gdb-new-badge">New</span></div>
+      <div class="gdb-bar-track">
+        <div class="gdb-bar-fill" style="width:63.1%;background:#0668e1;"></div>
+        <div class="gdb-bar-err" style="left:57.9%;width:10.4%;"></div>
+      </div>
+      <div class="gdb-bar-score">63.1% <span class="ci">±5.2</span></div>
+    </div>
+    <div class="gdb-bar-row">
+      <div class="gdb-bar-label"><img class="logo" src="/assets/img/logos/openai.svg" alt="openai"><span class="gdb-model-name">gpt-5.6-sol (medium)</span><span class="harness">[Codex]</span></div>
       <div class="gdb-bar-track">
         <div class="gdb-bar-fill" style="width:58.6%;background:#10a37f;"></div>
         <div class="gdb-bar-err" style="left:53.3%;width:10.6%;"></div>
       </div>
       <div class="gdb-bar-score">58.6% <span class="ci">±5.3</span></div>
     </div>
-    <div class="gdb-bar-row new">
-      <div class="gdb-bar-label"><img class="logo" src="/assets/img/logos/moonshot.svg" alt="moonshot"><span class="gdb-model-name">kimi-k3</span><span class="harness">[Kimi Code]</span><span class="gdb-new-badge">New</span></div>
+    <div class="gdb-bar-row">
+      <div class="gdb-bar-label"><img class="logo" src="/assets/img/logos/moonshot.svg" alt="moonshot"><span class="gdb-model-name">kimi-k3</span><span class="harness">[Kimi Code]</span></div>
       <div class="gdb-bar-track">
         <div class="gdb-bar-fill" style="width:58.0%;background:#cf3e3e;"></div>
         <div class="gdb-bar-err" style="left:52.7%;width:10.6%;"></div>
