@@ -118,7 +118,7 @@ nav: false
     </div>
     <input id="agd-asset-input" type="file" multiple hidden>
     <div id="agd-dropzone" class="agd-dropzone locked" role="button" tabindex="0" aria-disabled="true">
-      <div><strong>Drag &amp; drop assets</strong><span>Unlock testing to upload · up to 256 MB per file</span></div>
+      <div><strong>Drag &amp; drop assets</strong><span id="agd-dropzone-hint">Unlock testing to upload · up to 256 MB per file</span></div>
     </div>
     <div id="agd-assets-state" class="agd-assets-state" aria-live="polite">Asset library locked.</div>
     <ul id="agd-asset-list" class="agd-asset-list"></ul>
@@ -133,7 +133,7 @@ nav: false
   const DB_NAME = 'pinball-delve-recordings-v1';
   const MAX_VIDEO_BYTES = 2 * 1024 * 1024 * 1024;
   const els = Object.fromEntries([
-    'lifecycle','version','published','detail','game','lock','password','unlock','auth-error','notes','submit','dot','recording-label','submit-error','receipt','release-notes','asset-choose','asset-input','dropzone','assets-state','asset-list'
+    'lifecycle','version','published','detail','game','lock','password','unlock','auth-error','notes','submit','dot','recording-label','submit-error','receipt','release-notes','asset-choose','asset-input','dropzone','dropzone-hint','assets-state','asset-list'
   ].map(name => [name.replace(/-([a-z])/g, (_, letter) => letter.toUpperCase()), document.getElementById(`agd-${name}`)]));
 
   let status = null;
@@ -241,6 +241,7 @@ nav: false
       els.assetChoose.disabled = false;
       els.dropzone.classList.remove('locked');
       els.dropzone.setAttribute('aria-disabled', 'false');
+      els.dropzoneHint.textContent = 'Drop files here or choose files · up to 256 MB per file';
       await refreshAssets();
       await startRecorderWhenReady();
     } catch (error) {
