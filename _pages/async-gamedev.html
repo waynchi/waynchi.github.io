@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /async-gamedev/
-title: Chroma Drift — Async Game Development
+title: Pinball Delve — Async Game Development
 nav: false
 ---
 
@@ -39,16 +39,33 @@ nav: false
   .agd-dot.live { background:#db665e; box-shadow:0 0 0 5px rgba(219,102,94,.15); animation:agd-pulse 1.5s infinite; }
   .agd-release { margin:0; padding-left:18px; color:var(--muted); font-size:.9rem; }
   .agd-receipt { margin-top:10px; color:#528d70; font-size:.88rem; }
+  .agd-assets { margin-top:18px; }
+  .agd-assets-head { display:flex; align-items:flex-start; justify-content:space-between; gap:20px; margin-bottom:14px; }
+  .agd-assets-head h2 { margin:0 0 5px; font-size:1rem; text-transform:uppercase; letter-spacing:.08em; }
+  .agd-assets-head p { margin:0; max-width:720px; color:var(--muted); font-size:.86rem; line-height:1.5; }
+  .agd-dropzone { display:flex; align-items:center; justify-content:center; min-height:104px; padding:18px; border:1px dashed color-mix(in srgb,var(--ink) 42%,transparent); background:color-mix(in srgb,var(--gold) 5%,transparent); text-align:center; cursor:pointer; transition:border-color .15s,background .15s; }
+  .agd-dropzone:focus-visible,.agd-dropzone.dragging { outline:none; border-color:var(--gold); background:color-mix(in srgb,var(--gold) 13%,transparent); }
+  .agd-dropzone.locked { cursor:not-allowed; opacity:.62; }
+  .agd-dropzone strong { display:block; margin-bottom:5px; font:700 .76rem/1.3 'SF Mono',monospace; letter-spacing:.06em; text-transform:uppercase; }
+  .agd-dropzone span { color:var(--muted); font-size:.82rem; }
+  .agd-assets-state { min-height:1.3em; margin:10px 0 4px; color:var(--muted); font-size:.82rem; }
+  .agd-asset-list { display:grid; grid-template-columns:repeat(auto-fit,minmax(245px,1fr)); gap:10px; margin:14px 0 0; padding:0; list-style:none; }
+  .agd-asset-item { min-width:0; padding:12px 14px; border:1px solid color-mix(in srgb,var(--ink) 14%,transparent); background:color-mix(in srgb,var(--paper) 58%,transparent); }
+  .agd-asset-name { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font-weight:700; font-size:.86rem; }
+  .agd-asset-meta { margin-top:4px; color:var(--muted); font:500 .68rem/1.45 'SF Mono',monospace; }
+  .agd-asset-status { display:inline-block; margin-top:8px; padding:3px 6px; border:1px solid currentColor; color:#87703f; font:700 .62rem/1.2 'SF Mono',monospace; letter-spacing:.05em; text-transform:uppercase; }
+  .agd-asset-status.in-context { color:#b36a33; }
+  .agd-asset-status.used { color:#528d70; }
   @keyframes agd-pulse { 50% { opacity:.45; } }
-  @media(max-width:760px){ .agd-hero{display:block}.agd-status{margin-top:16px}.agd-feedback{grid-template-columns:1fr}.agd-field{display:block}.agd-field button{width:100%;margin-top:8px} }
+  @media(max-width:760px){ .agd-hero{display:block}.agd-status{margin-top:16px}.agd-feedback{grid-template-columns:1fr}.agd-field{display:block}.agd-field button{width:100%;margin-top:8px}.agd-assets-head{display:block}.agd-assets-head .agd-button{width:100%;margin-top:12px} }
 </style>
 
 <div class="agd-shell">
   <section class="agd-hero">
     <div>
       <div class="agd-kicker">A game made in conversation</div>
-      <h1>Chroma Drift</h1>
-      <p>A two-touch side-scrolling action run. Tap left to invert gravity and lock incoming squadrons onto your projected firing path; tap right for an impact surge. Draw one clean arc, watch enemies copy it, and turn timing into a visible kill chain. Your recorded run becomes the brief for the next release.</p>
+      <h1>Pinball Delve</h1>
+      <p>A fantasy pinball roguelike. Work both flippers, ricochet into monsters, and turn bumpers and rune lanes into attack power. Enemy intent resolves when your volley drains; each victory adds a run-defining sigil and another choice on the ascent.</p>
     </div>
     <div class="agd-status" aria-live="polite">
       <div class="agd-status-row"><span>Agent</span><span id="agd-lifecycle" class="agd-status-value">Loading</span></div>
@@ -59,7 +76,7 @@ nav: false
   </section>
 
   <section class="agd-stage">
-    <iframe id="agd-game" title="Chroma Drift game" allow="autoplay; fullscreen" allowfullscreen loading="eager"></iframe>
+    <iframe id="agd-game" title="Pinball Delve game" allow="autoplay; fullscreen" allowfullscreen loading="eager"></iframe>
     <div id="agd-lock" class="agd-lock">
       <div class="agd-lock-card">
         <div class="agd-kicker">Private testing controls</div>
@@ -90,6 +107,22 @@ nav: false
       <ul id="agd-release-notes" class="agd-release"><li>Loading release notes…</li></ul>
     </aside>
   </section>
+
+  <section class="agd-card agd-assets" aria-labelledby="agd-assets-title">
+    <div class="agd-assets-head">
+      <div>
+        <h2 id="agd-assets-title">Permanent asset library</h2>
+        <p>Drop reference art, sprites, audio, documents, or other source material here. Files remain available across every release. Their live status shows when the development agent is inspecting them and which build last used them.</p>
+      </div>
+      <button id="agd-asset-choose" class="agd-button" disabled>Choose files</button>
+    </div>
+    <input id="agd-asset-input" type="file" multiple hidden>
+    <div id="agd-dropzone" class="agd-dropzone locked" role="button" tabindex="0" aria-disabled="true">
+      <div><strong>Drag &amp; drop assets</strong><span>Unlock testing to upload · up to 256 MB per file</span></div>
+    </div>
+    <div id="agd-assets-state" class="agd-assets-state" aria-live="polite">Asset library locked.</div>
+    <ul id="agd-asset-list" class="agd-asset-list"></ul>
+  </section>
 </div>
 
 <script>
@@ -97,14 +130,14 @@ nav: false
   'use strict';
   const API_BASE = 'https://bass.cs.cmu.edu';
   const STATUS_URL = '/assets/async-gamedev/status.json';
-  const DB_NAME = 'chroma-drift-recordings-v1';
+  const DB_NAME = 'pinball-delve-recordings-v1';
   const MAX_VIDEO_BYTES = 2 * 1024 * 1024 * 1024;
   const els = Object.fromEntries([
-    'lifecycle','version','published','detail','game','lock','password','unlock','auth-error','notes','submit','dot','recording-label','submit-error','receipt','release-notes'
+    'lifecycle','version','published','detail','game','lock','password','unlock','auth-error','notes','submit','dot','recording-label','submit-error','receipt','release-notes','asset-choose','asset-input','dropzone','assets-state','asset-list'
   ].map(name => [name.replace(/-([a-z])/g, (_, letter) => letter.toUpperCase()), document.getElementById(`agd-${name}`)]));
 
   let status = null;
-  let token = sessionStorage.getItem('chroma-drift-feedback-token');
+  let token = sessionStorage.getItem('pinball-delve-feedback-token');
   let sessionId = null;
   let sessionStartedAt = null;
   let recorder = null;
@@ -113,6 +146,8 @@ nav: false
   let latestSnapshot = null;
   let recordingReady = false;
   let submitted = false;
+  let assetsUnlocked = false;
+  let assetUploadBusy = false;
 
   function lifecycleLabel(value) {
     return ({awaiting_feedback:'Awaiting feedback',developing:'Developing',validating:'Validating',deploying:'Deploying',retrying:'Retrying',bootstrap:'Bootstrapping'})[value] || value || 'Unknown';
@@ -128,7 +163,7 @@ nav: false
       els.published.textContent = status.deployed_at ? new Date(status.deployed_at).toLocaleString() : '—';
       els.detail.textContent = status.lifecycle_detail || 'Worker status is available.';
       els.releaseNotes.innerHTML = '';
-      for (const note of status.release_notes || ['The first Chroma Drift run is ready.']) {
+      for (const note of status.release_notes || ['The first Pinball Delve ascent is ready.']) {
         const li = document.createElement('li'); li.textContent = note; els.releaseNotes.appendChild(li);
       }
       if (!els.game.src && status.game_url) els.game.src = status.game_url;
@@ -195,13 +230,18 @@ nav: false
       if (!response.ok) throw new Error(response.status === 401 ? 'Incorrect passphrase.' : `API returned ${response.status}.`);
       const body = await response.json();
       token = body.token;
-      sessionStorage.setItem('chroma-drift-feedback-token', token);
+      sessionStorage.setItem('pinball-delve-feedback-token', token);
       sessionId = crypto.randomUUID();
       sessionStartedAt = new Date().toISOString();
       actions = [];
       els.lock.style.display = 'none';
       els.notes.disabled = false;
       els.submit.disabled = true;
+      assetsUnlocked = true;
+      els.assetChoose.disabled = false;
+      els.dropzone.classList.remove('locked');
+      els.dropzone.setAttribute('aria-disabled', 'false');
+      await refreshAssets();
       await startRecorderWhenReady();
     } catch (error) {
       els.authError.textContent = error.message || 'Could not reach the feedback service.';
@@ -279,8 +319,71 @@ nav: false
     }
   }
 
+  function formatBytes(bytes) {
+    if (bytes < 1024) return `${bytes} B`;
+    if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(1)} KB`;
+    return `${(bytes / 1024 / 1024).toFixed(1)} MB`;
+  }
+
+  function renderAssets(assets) {
+    els.assetList.replaceChildren();
+    if (!assets.length) {
+      const item = document.createElement('li');
+      item.className = 'agd-asset-item';
+      item.textContent = 'No human-provided assets yet.';
+      els.assetList.appendChild(item);
+      return;
+    }
+    for (const asset of assets) {
+      const item = document.createElement('li'); item.className = 'agd-asset-item';
+      const name = document.createElement('div'); name.className = 'agd-asset-name'; name.textContent = asset.name; name.title = asset.name;
+      const meta = document.createElement('div'); meta.className = 'agd-asset-meta';
+      meta.textContent = `${formatBytes(asset.size_bytes)} · ${asset.mime_type || 'unknown type'} · added ${new Date(asset.uploaded_at).toLocaleDateString()}`;
+      const badge = document.createElement('div'); badge.className = `agd-asset-status ${asset.status.replace('_','-')}`;
+      badge.textContent = asset.status === 'in_context' ? 'In agent context now' : asset.status === 'used' ? `Used in ${asset.last_used_version}` : 'Available next iteration';
+      item.append(name, meta, badge); els.assetList.appendChild(item);
+    }
+  }
+
+  async function refreshAssets() {
+    if (!assetsUnlocked || !token || assetUploadBusy) return;
+    try {
+      const response = await fetch(`${API_BASE}/v1/assets?t=${Date.now()}`, {cache:'no-store',headers:{Authorization:`Bearer ${token}`}});
+      if (!response.ok) throw new Error(response.status === 401 ? 'Asset access expired. Reload and unlock again.' : `Asset service returned ${response.status}.`);
+      const body = await response.json();
+      renderAssets(body.assets || []);
+      els.assetsState.textContent = `${(body.assets || []).length} permanent asset${(body.assets || []).length === 1 ? '' : 's'} · live status refreshes automatically.`;
+    } catch (error) { els.assetsState.textContent = error.message || 'Could not refresh assets.'; }
+  }
+
+  async function uploadAssets(files) {
+    const queue = Array.from(files || []);
+    if (!assetsUnlocked || !queue.length || assetUploadBusy) return;
+    assetUploadBusy = true;
+    els.assetChoose.disabled = true;
+    els.dropzone.classList.add('locked');
+    try {
+      for (let index=0; index<queue.length; index++) {
+        const file = queue[index];
+        els.assetsState.textContent = `Uploading ${index + 1} of ${queue.length}: ${file.name}…`;
+        const form = new FormData(); form.append('asset', file, file.name);
+        const response = await fetch(`${API_BASE}/v1/assets`, {method:'POST',headers:{Authorization:`Bearer ${token}`},body:form});
+        const body = await response.json().catch(() => ({}));
+        if (!response.ok) throw new Error(`${file.name}: ${body.error || `upload returned ${response.status}`}`);
+      }
+      els.assetsState.textContent = `${queue.length} asset${queue.length === 1 ? '' : 's'} saved permanently.`;
+    } catch (error) { els.assetsState.textContent = error.message || 'Asset upload failed.'; }
+    finally {
+      assetUploadBusy = false;
+      els.assetChoose.disabled = false;
+      els.dropzone.classList.remove('locked','dragging');
+      els.assetInput.value = '';
+      await refreshAssets();
+    }
+  }
+
   window.addEventListener('message', event => {
-    if (event.origin !== window.location.origin || !event.data || event.data.source !== 'chroma_drift') return;
+    if (event.origin !== window.location.origin || !event.data || event.data.source !== 'pinball_delve') return;
     const gameEvent = event.data.event;
     actions.push(gameEvent);
     if (gameEvent && gameEvent.data && gameEvent.data.snapshot) latestSnapshot = gameEvent.data.snapshot;
@@ -290,7 +393,15 @@ nav: false
   els.unlock.addEventListener('click', authenticate);
   els.password.addEventListener('keydown', event => { if (event.key === 'Enter') authenticate(); });
   els.submit.addEventListener('click', submitFeedback);
+  els.assetChoose.addEventListener('click', () => { if (assetsUnlocked && !assetUploadBusy) els.assetInput.click(); });
+  els.assetInput.addEventListener('change', () => uploadAssets(els.assetInput.files));
+  els.dropzone.addEventListener('click', () => { if (assetsUnlocked && !assetUploadBusy) els.assetInput.click(); });
+  els.dropzone.addEventListener('keydown', event => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); if (assetsUnlocked && !assetUploadBusy) els.assetInput.click(); } });
+  for (const type of ['dragenter','dragover']) els.dropzone.addEventListener(type, event => { event.preventDefault(); if (assetsUnlocked && !assetUploadBusy) els.dropzone.classList.add('dragging'); });
+  for (const type of ['dragleave','drop']) els.dropzone.addEventListener(type, event => { event.preventDefault(); els.dropzone.classList.remove('dragging'); });
+  els.dropzone.addEventListener('drop', event => { if (assetsUnlocked && !assetUploadBusy) uploadAssets(event.dataTransfer.files); });
   refreshStatus();
   setInterval(refreshStatus, 60000);
+  setInterval(refreshAssets, 5000);
 })();
 </script>
