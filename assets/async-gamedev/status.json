@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "lifecycle": "deploying",
-  "lifecycle_detail": "Publishing v0029",
+  "lifecycle": "awaiting_feedback",
+  "lifecycle_detail": "Playable build verified",
   "current_version": "v0029",
   "game_url": "/assets/async-gamedev/releases/v0029/index.html",
-  "deployed_at": null,
+  "deployed_at": "2026-08-10T06:14:50.219Z",
   "release_notes": [
     "Battle through a responsive two-flipper fantasy pinball table where direct hits damage monsters and each drain resolves a visible enemy intent.",
     "Draft from 15 stackable sigils, then choose battles, elites, camps, forges, and a final boss across a deterministic eight-floor roguelike ascent.",
