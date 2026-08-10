@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "lifecycle": "deploying",
-  "lifecycle_detail": "Publishing v0030",
+  "lifecycle": "awaiting_feedback",
+  "lifecycle_detail": "Playable build verified",
   "current_version": "v0030",
   "game_url": "/assets/async-gamedev/releases/v0030/index.html",
-  "deployed_at": null,
+  "deployed_at": "2026-08-10T06:29:43.653Z",
   "release_notes": [
     "Opened the plunger lane into a reliable skill-shot arc so every volley enters live table play, reaches scoring geometry, and can attack the enemy.",
     "Battle through a responsive two-flipper fantasy pinball table where direct hits damage monsters and each drain resolves a visible enemy intent.",
