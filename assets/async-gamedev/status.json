@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "lifecycle": "deploying",
-  "lifecycle_detail": "Publishing v0032",
+  "lifecycle": "awaiting_feedback",
+  "lifecycle_detail": "Playable build verified",
   "current_version": "v0032",
   "game_url": "/assets/async-gamedev/releases/v0032/index.html",
-  "deployed_at": null,
+  "deployed_at": "2026-08-18T22:39:11.734Z",
   "release_notes": [
     "Replaced unclear names: Moonlit Grotto is now Green Field, Moon Mart is Item Shop, and Journey is Travel.",
     "Objectives are explicit: Catch captures creatures; Hatch uses A–D lanes and an egg; Evolve upgrades a caught creature; Travel is Travel Sling → Center Hole → blue portal → next field.",
