@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "lifecycle": "deploying",
-  "lifecycle_detail": "Publishing v0031",
+  "lifecycle": "awaiting_feedback",
+  "lifecycle_detail": "Playable build verified",
   "current_version": "v0031",
   "game_url": "/assets/async-gamedev/releases/v0031/index.html",
-  "deployed_at": null,
+  "deployed_at": "2026-08-18T10:06:17.003Z",
   "release_notes": [
     "Replaced the old combat/reward cadence with continuous three-ball pinball, charged plunger, two responsive flippers, savers, kickbacks, ball grades, live Moon Mart purchases, collection, travel, and bonus fields.",
     "Added distinct Verdant and Ember collision graphs, orbit rules, launch curves, device economies, a rotating Verdant Bloom Carousel, and Ember’s moving Rune Shuttle.",
