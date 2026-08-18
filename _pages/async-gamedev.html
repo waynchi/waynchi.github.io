@@ -110,6 +110,14 @@ nav: false
   .agd-asset-open { margin-top:8px; border:0; padding:0; color:var(--blue); background:none; font-size:.7rem; cursor:pointer; }
   [hidden] { display:none!important; }
   @keyframes agd-pulse { 50% { opacity:.45; } }
+  @media(min-width:1101px) {
+    .agd-workspace { height:clamp(720px,calc(100vh - 96px),940px); min-height:0; }
+    .agd-game-column { display:flex; height:100%; min-height:0; flex-direction:column; }
+    .agd-panel-head,.agd-game-foot { flex:0 0 auto; }
+    .agd-stage { flex:1 1 auto; height:auto; min-height:0; }
+    .agd-console { height:100%; min-height:0; }
+    .agd-history { min-height:0; }
+  }
   @media(max-width:1100px) {
     .agd-workspace { grid-template-columns:1fr; }
     .agd-game-column { border-right:0; border-bottom:1px solid var(--line); }
