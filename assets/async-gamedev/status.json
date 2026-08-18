@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "lifecycle": "awaiting_feedback",
-  "lifecycle_detail": "Playable build verified",
+  "lifecycle": "developing",
+  "lifecycle_detail": "Codex is working on 1 message",
   "current_version": "v0031",
   "game_url": "/assets/async-gamedev/releases/v0031/index.html",
   "deployed_at": "2026-08-18T10:06:17.003Z",
