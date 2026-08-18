@@ -1,16 +1,19 @@
 {
   "schema_version": 1,
-  "lifecycle": "developing",
-  "lifecycle_detail": "Codex is working on 3 messages",
-  "current_version": "v0030",
-  "game_url": "/assets/async-gamedev/releases/v0030/index.html",
-  "deployed_at": "2026-08-10T06:29:43.653Z",
+  "lifecycle": "deploying",
+  "lifecycle_detail": "Publishing v0031",
+  "current_version": "v0031",
+  "game_url": "/assets/async-gamedev/releases/v0031/index.html",
+  "deployed_at": null,
   "release_notes": [
-    "Opened the plunger lane into a reliable skill-shot arc so every volley enters live table play, reaches scoring geometry, and can attack the enemy.",
-    "Battle through a responsive two-flipper fantasy pinball table where direct hits damage monsters and each drain resolves a visible enemy intent.",
-    "Draft from 15 stackable sigils, then choose battles, elites, camps, forges, and a final boss across a deterministic eight-floor roguelike ascent.",
-    "The permanent asset library accepts drag-and-drop uploads and live-tracks when files are available, in the agent context, or used by a release.",
-    "CC0 monster, pinball, icon, music, and sound assets create an arcane-brass cabinet with particles, impact shake, score pops, and layered enemy animation."
+    "Replaced the old combat/reward cadence with continuous three-ball pinball, charged plunger, two responsive flippers, savers, kickbacks, ball grades, live Moon Mart purchases, collection, travel, and bonus fields.",
+    "Added distinct Verdant and Ember collision graphs, orbit rules, launch curves, device economies, a rotating Verdant Bloom Carousel, and Ember’s moving Rune Shuttle.",
+    "Implemented Hunt, Hatch, Transmute, and Journey as multi-phase physical modes: capture seal, cracking egg and moving newborn, creature-selected directional runes plus relocating relics, and portal plus destination beacon.",
+    "Added separate Constellation and Guardian bonus arenas. The Guardian has three movement phases and two stages of closing physical barriers.",
+    "Completion effects now briefly lock the table, preserving ball position, saver time, mode time, and input state instead of obscuring live danger.",
+    "Generated three original painted playfield underlays using the imagegen skill’s built-in mode. The prompts emphasized dense handheld pinball readability while excluding licensed characters, logos, and copied table art. Provenance is recorded in [ASSET_SOURCES.md](/home/waynechi/dev/async-gamedev/game/assets/model_generated/ASSET_SOURCES.md).",
+    "Core implementation is in [game_logic.gd](/home/waynechi/dev/async-gamedev/game/src/game_logic.gd) and [main.gd](/home/waynechi/dev/async-gamedev/game/src/main.gd). The measurable rubric is in [POKEMON_PINBALL_SIMILARITY_RUBRIC.md](/home/waynechi/dev/async-gamedev/docs/POKEMON_PINBALL_SIMILARITY_RUBRIC.md).",
+    "Validation passed: `npm test`, Godot logic tests, full main-scene physical tests, web export, `git diff --check`, and browser smoke covering WebGL2, recording, telemetry, both flippers, charged launch, and natural table contact. The browser recording contained 42,457 bytes. Similarity gate: 9.56/10, three accepting reviewers, zero P0 issues."
   ],
-  "artifact_sha256": "9fea4a3106289fb612e8f54bc6129ab7f3faf4048967be4033fea16f0f9c6e5f"
+  "artifact_sha256": "af73f806b93b1cabbc06d03b1823731314228b4876f98fbcb4138a7e5d47a5f0"
 }
