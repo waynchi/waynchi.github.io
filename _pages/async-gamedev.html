@@ -177,7 +177,7 @@ nav: false
             <span id="agd-engine-state">Next turn engine</span>
             <select id="agd-engine" disabled aria-label="Development engine for the next turn">
               <option value="godot">Godot</option>
-              <option value="web">Web · Phaser + Matter</option>
+              <option value="web">Web · PlayCanvas</option>
             </select>
           </label>
           <button id="agd-finish" class="agd-button finish" disabled>Finish turn</button>
@@ -474,7 +474,7 @@ nav: false
   }
 
   function engineLabel(value) {
-    return value === 'web' ? 'Web · Phaser + Matter' : 'Godot';
+    return value === 'web' ? 'Web · PlayCanvas' : 'Godot';
   }
 
   async function saveEngine() {
