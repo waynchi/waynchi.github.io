@@ -44,9 +44,13 @@ nav: false
   .agd-game-foot summary { color:var(--blue); cursor:pointer; }
   .agd-release { margin:8px 0 0; padding-left:18px; }
   .agd-console { display:flex; min-width:0; height:100%; min-height:720px; flex-direction:column; background:var(--panel); }
-  .agd-console-head { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:15px 16px; border-bottom:1px solid var(--line); }
+  .agd-console-head { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px; padding:15px 16px; border-bottom:1px solid var(--line); }
   .agd-console-head h2 { margin:0; color:var(--ink); font-size:.9rem; text-transform:uppercase; letter-spacing:.08em; }
-  .agd-console-actions { display:flex; align-items:center; gap:8px; }
+  .agd-console-actions { display:flex; flex-wrap:wrap; align-items:center; justify-content:flex-end; gap:8px; }
+  .agd-engine-picker { display:flex; align-items:center; gap:7px; min-height:36px; padding:4px 5px 4px 10px; border:1px solid var(--line); border-radius:8px; color:var(--muted); background:#07131b; font:700 .59rem/1.2 ui-monospace,SFMono-Regular,Menlo,monospace; letter-spacing:.04em; text-transform:uppercase; }
+  .agd-engine-picker select { max-width:168px; min-height:26px; border:0; border-radius:5px; padding:3px 22px 3px 7px; color:var(--ink); background:#173142; font:700 .66rem/1.2 ui-monospace,SFMono-Regular,Menlo,monospace; outline:none; cursor:pointer; }
+  .agd-engine-picker select:focus { box-shadow:0 0 0 2px rgba(111,156,175,.32); }
+  .agd-engine-picker select:disabled { opacity:.5; cursor:not-allowed; }
   .agd-button { min-height:36px; border:1px solid var(--line-hot); border-radius:8px; padding:8px 13px; color:var(--ink); background:#173142; font:700 .69rem/1.2 ui-monospace,SFMono-Regular,Menlo,monospace; letter-spacing:.04em; text-transform:uppercase; cursor:pointer; transition:transform .12s,border-color .12s,background .12s; }
   .agd-button:hover:not(:disabled) { transform:translateY(-1px); border-color:#76a6bb; background:#20445a; }
   .agd-button:disabled { opacity:.42; cursor:not-allowed; }
@@ -168,7 +172,16 @@ nav: false
     <section class="agd-console" aria-labelledby="agd-conversation-title">
       <div class="agd-console-head">
         <h2 id="agd-conversation-title">Conversation &amp; work log</h2>
-        <div class="agd-console-actions"><button id="agd-finish" class="agd-button finish" disabled>Finish turn</button></div>
+        <div class="agd-console-actions">
+          <label class="agd-engine-picker" title="Sets the implementation engine for messages you send next.">
+            <span id="agd-engine-state">Next turn engine</span>
+            <select id="agd-engine" disabled aria-label="Development engine for the next turn">
+              <option value="godot">Godot</option>
+              <option value="web">Web · Phaser + Matter</option>
+            </select>
+          </label>
+          <button id="agd-finish" class="agd-button finish" disabled>Finish turn</button>
+        </div>
       </div>
       <div id="agd-auth" class="agd-auth">
         <h3>Unlock the development channel</h3>
@@ -224,6 +237,7 @@ nav: false
     releaseNotes:byId('release-notes'), auth:byId('auth'), password:byId('password'), unlock:byId('unlock'),
     authError:byId('auth-error'), history:byId('history'), finish:byId('finish'), composer:byId('composer'),
     notes:byId('notes'), submit:byId('submit'), submitError:byId('submit-error'), composerHint:byId('composer-hint'),
+    engine:byId('engine'), engineState:byId('engine-state'),
     assetChoose:byId('asset-choose'), assetInput:byId('asset-input'), dropzone:byId('dropzone'),
     dropzoneHint:byId('dropzone-hint'), assetsState:byId('assets-state'), assetList:byId('asset-list')
   };
@@ -239,6 +253,8 @@ nav: false
   let latestSnapshot = null;
   let recordingReady = false;
   let sendBusy = false;
+  let developmentEngine = 'godot';
+  let engineSaveBusy = false;
   let assetUploadBusy = false;
   let historyFingerprint = '';
   let latestTurns = [];
@@ -411,10 +427,16 @@ nav: false
   }
 
   async function unlockInterface() {
-    const response = await api('/v1/turns');
-    if (!response.ok) throw new Error(`History returned ${response.status}.`);
-    const body = await response.json();
+    const [turnResponse, settingsResponse] = await Promise.all([api('/v1/turns'),api('/v1/settings')]);
+    if (!turnResponse.ok) throw new Error(`History returned ${turnResponse.status}.`);
+    if (!settingsResponse.ok) throw new Error(`Settings returned ${settingsResponse.status}.`);
+    const body = await turnResponse.json();
+    const settings = await settingsResponse.json();
     unlocked = true;
+    developmentEngine = settings.development_engine === 'web' ? 'web' : 'godot';
+    els.engine.value = developmentEngine;
+    els.engine.disabled = false;
+    els.engineState.textContent = 'Next turn engine';
     els.auth.hidden = true;
     els.composer.hidden = false;
     els.assetChoose.disabled = false;
@@ -433,6 +455,8 @@ nav: false
     els.auth.hidden = false;
     els.composer.hidden = true;
     els.finish.disabled = true;
+    els.engine.disabled = true;
+    els.engineState.textContent = 'Next turn engine';
     els.assetChoose.disabled = true;
     els.dropzone.classList.add('locked');
     els.authError.textContent = message;
@@ -447,6 +471,37 @@ nav: false
 
   function turnStatusLabel(value) {
     return ({queued:'Queued',working:'Codex working',validating:'Validating',publishing:'Publishing',retrying:'Retrying',completed:'Completed'})[value] || value;
+  }
+
+  function engineLabel(value) {
+    return value === 'web' ? 'Web · Phaser + Matter' : 'Godot';
+  }
+
+  async function saveEngine() {
+    if (!unlocked || engineSaveBusy) return;
+    const previous = developmentEngine;
+    const selected = els.engine.value === 'web' ? 'web' : 'godot';
+    if (selected === previous) return;
+    engineSaveBusy = true;
+    els.engine.disabled = true;
+    els.engineState.textContent = 'Saving…';
+    try {
+      const response = await api('/v1/settings/engine', {
+        method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({development_engine:selected})
+      });
+      const body = await response.json().catch(() => ({}));
+      if (!response.ok) throw new Error(body.error || `Settings returned ${response.status}.`);
+      developmentEngine = body.development_engine;
+      els.engine.value = developmentEngine;
+      els.composerHint.textContent = `Your next message will target ${engineLabel(developmentEngine)}. The current playable build stays live until a replacement passes validation.`;
+    } catch (error) {
+      els.engine.value = previous;
+      els.submitError.textContent = error.message || 'Could not save the development engine.';
+    } finally {
+      engineSaveBusy = false;
+      els.engine.disabled = !unlocked;
+      els.engineState.textContent = 'Next turn engine';
+    }
   }
 
   function createMessage(role, title, time, body) {
@@ -476,7 +531,7 @@ nav: false
       const container = document.createElement('article'); container.className = 'agd-turn';
       const user = createMessage('user','You',turn.submitted_at,turn.user_message);
       const userMeta = document.createElement('div'); userMeta.className = 'agd-message-meta';
-      userMeta.textContent = `${turn.build_version || 'unknown build'} · ${turn.action_count || 0} gameplay events${turn.recording_available ? ' · recording attached' : ''}`;
+      userMeta.textContent = `${turn.build_version || 'unknown build'} · ${engineLabel(turn.development_engine)} · ${turn.action_count || 0} gameplay events${turn.recording_available ? ' · recording attached' : ''}`;
       user.appendChild(userMeta);
       container.appendChild(user);
 
@@ -562,6 +617,7 @@ nav: false
         submitted_at:new Date().toISOString(),
         user_agent:navigator.userAgent,
         viewport:{width:innerWidth,height:innerHeight},
+        development_engine:developmentEngine,
         feedback,
         actions,
         final_snapshot:latestSnapshot,
@@ -687,6 +743,7 @@ nav: false
   els.submit.addEventListener('click',sendMessage);
   els.notes.addEventListener('keydown',event=>{ if((event.metaKey||event.ctrlKey)&&event.key==='Enter') sendMessage(); });
   els.finish.addEventListener('click',finishTurn);
+  els.engine.addEventListener('change',saveEngine);
   els.assetChoose.addEventListener('click',()=>{ if(unlocked&&!assetUploadBusy) els.assetInput.click(); });
   els.assetInput.addEventListener('change',()=>uploadAssets(els.assetInput.files));
   els.dropzone.addEventListener('click',()=>{ if(unlocked&&!assetUploadBusy) els.assetInput.click(); });
