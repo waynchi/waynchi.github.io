@@ -72,6 +72,7 @@
   <div class="pub-meta">
     {%- if venue and venue != '' -%}<em>{{ venue }}</em>{%- if entry.year -%},{%- endif -%}{%- endif %}
     {{ entry.year }}
+    {%- if entry.award %} <span class="pub-award">({{ entry.award }})</span>{% endif %}
     {%- assign arxiv_href = '' -%}
     {%- if entry.arxiv -%}
       {%- assign arxiv_href = entry.arxiv | prepend: 'https://arxiv.org/abs/' -%}

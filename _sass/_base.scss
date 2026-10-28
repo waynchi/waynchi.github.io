@@ -1100,7 +1100,38 @@ nav[data-toggle="toc"] {
     font-size: 0.85rem;
   }
 
+  .pub-award {
+    color: #e5484d;
+    font-weight: 600;
+  }
+
+  // Year group headings are hidden; the year shows on each entry instead
   h2.bibliography {
-    margin-bottom: -1.5rem;
+    display: none;
+  }
+
+  ol.bibliography {
+    margin-bottom: 0;
+  }
+}
+
+/*****************************************************************************
+* Compact news section
+******************************************************************************/
+
+.news {
+  .table {
+    margin-bottom: 0.5rem;
+
+    th,
+    td {
+      padding: 0.1rem 0;
+      font-size: 0.95rem;
+    }
+
+    th {
+      padding-right: 1.25rem;
+      white-space: nowrap;
+    }
   }
 }
