@@ -1034,3 +1034,73 @@ nav[data-toggle="toc"] {
     padding-top: 0.5rem;
   }
 }
+
+/*****************************************************************************
+* Compact publications (publications page + homepage selected papers)
+******************************************************************************/
+
+.publications {
+  .pub-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .pub-filter {
+    display: inline-flex;
+    border: 1px solid var(--global-divider-color);
+    border-radius: 6px;
+    overflow: hidden;
+
+    button {
+      background: none;
+      border: none;
+      padding: 0.35rem 1rem;
+      font-size: 0.9rem;
+      color: var(--global-text-color);
+      cursor: pointer;
+
+      &.active {
+        background-color: var(--global-theme-color);
+        color: white;
+      }
+    }
+  }
+
+  .pub-scholar a {
+    font-size: 0.9rem;
+  }
+
+  ol.bibliography li {
+    margin-bottom: 0.9rem;
+  }
+
+  .pub-entry {
+    line-height: 1.4;
+  }
+
+  .pub-title {
+    font-weight: 600;
+  }
+
+  .pub-authors,
+  .pub-meta {
+    font-size: 0.92rem;
+  }
+
+  .pub-meta {
+    color: var(--global-text-color-light);
+  }
+
+  .pub-links a {
+    margin-left: 0.4rem;
+    font-size: 0.85rem;
+  }
+
+  h2.bibliography {
+    margin-bottom: -1.5rem;
+  }
+}
