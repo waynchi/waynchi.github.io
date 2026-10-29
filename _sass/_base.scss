@@ -1040,13 +1040,15 @@ nav[data-toggle="toc"] {
 ******************************************************************************/
 
 .publications {
+  margin-top: 0;
+
   .pub-toolbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 0.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
   }
 
   .pub-filter {
@@ -1130,8 +1132,16 @@ nav[data-toggle="toc"] {
     }
 
     th {
+      width: 1%;
       padding-right: 1.25rem;
       white-space: nowrap;
     }
   }
+}
+
+// Tighter section headings on the about page (news, publications)
+.post article > h2 {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
 }
