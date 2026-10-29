@@ -1,0 +1,52 @@
+<!-- _includes/publications_list.html — full bibliography with All/Selected filter (defaults to Selected) -->
+<div class="pub-toolbar">
+  <div class="pub-filter" role="group" aria-label="Publication filter">
+    <button type="button" id="pub-filter-all">All</button>
+    <button type="button" id="pub-filter-selected" class="active">Selected</button>
+  </div>
+  {% if include.scholar_link %}
+  <div class="pub-scholar">
+    <a href="https://scholar.google.com/citations?user={{ site.scholar_userid }}&hl=en" target="_blank" rel="noopener noreferrer">
+      <i class="ai ai-google-scholar"></i> Google Scholar
+    </a>
+  </div>
+  {% endif %}
+</div>
+
+{% bibliography -f {{ site.scholar.bibliography }} %}
+
+<script>
+  (function () {
+    function applyPubFilter(mode) {
+      document.querySelectorAll('.publications ol.bibliography > li').forEach(function (li) {
+        var entry = li.querySelector('.pub-entry');
+        var isSelected = entry && entry.classList.contains('pub-selected');
+        li.style.display = (mode === 'all' || isSelected) ? '' : 'none';
+      });
+      // Hide year groups with no visible entries
+      document.querySelectorAll('.publications ol.bibliography').forEach(function (list) {
+        var anyVisible = Array.prototype.some.call(list.children, function (li) {
+          return li.style.display !== 'none';
+        });
+        list.style.display = anyVisible ? '' : 'none';
+      });
+      document.getElementById('pub-filter-all').classList.toggle('active', mode === 'all');
+      document.getElementById('pub-filter-selected').classList.toggle('active', mode === 'selected');
+    }
+
+    function initPubFilter() {
+      var allBtn = document.getElementById('pub-filter-all');
+      var selectedBtn = document.getElementById('pub-filter-selected');
+      if (!allBtn || !selectedBtn) return;
+      allBtn.addEventListener('click', function () { applyPubFilter('all'); });
+      selectedBtn.addEventListener('click', function () { applyPubFilter('selected'); });
+      applyPubFilter('selected');
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initPubFilter);
+    } else {
+      initPubFilter();
+    }
+  })();
+</script>
